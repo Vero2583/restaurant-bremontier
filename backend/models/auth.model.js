@@ -1,3 +1,5 @@
+import {db} from '../config/db.js'
+
 // créer un utilisateur users
 
 export const createUser = async (email, passwordHash, verifyToken) => {

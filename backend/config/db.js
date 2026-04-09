@@ -1,6 +1,8 @@
 import mysql from "mysql2/promise";
 import "dotenv/config";
 
+// connection à la base de donées
+
 let db;
 
 try {
@@ -17,3 +19,4 @@ try {
 }
 
 export {db}
+

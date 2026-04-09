@@ -5,49 +5,46 @@ projet stage 10 semaines
 Backend/
   |_src/
     |_config/
-     	  |_db.js
+     	    |_db.js
           |_mailer.js
     |_controllers/
-	      |_auth.controller.js
-	      |_password.controller.js
+	    |_auth.controller.js
           |_allergenes.controller.js
-	      |_menus.controller.js
-	      |_reservations.controller.js
+	    |_menus.controller.js
+	    |_reservations.controller.js
           |_entrees.controller.js
           |_plats.controller.js
           |_desserts.controller.js
-	      |_boissons.controller.js
+	    |_boissons.controller.js
     |_middlewares/
           |_auth.middleware.js
           |_upload.middleware.js
           |_allergenes.middleware.js
-	      |_menus.middleware.js
-	      |_reservations.middleware.js
+	    |_menus.middleware.js
+	    |_reservations.middleware.js
           |_entrees.middleware.js
           |_plats.middleware.js
           |_desserts.middleware.js
-	      |_boissons.middleware.js
+	    |_boissons.middleware.js
           |_validation.middleware.js
     |_models/
           |_auth.model.js
-          |_password.model.js
-	      |_allergenes.model.js
-	      |_menus.model.js
-	      |_reservations.model.js
+	    |_allergenes.model.js
+          |_menus.model.js
+	    |_reservations.model.js
           |_entrees.model.js
           |_plats.model.js
           |_desserts.model.js
-	      |_boissons.model.js
+	    |_boissons.model.js
     |_routes/
           |_auth.route.js
-	      |_pass.route.js
           |_allergenes.route.js
-	      |_menus. route.js
-	      |_reservations.route.js
+	    |_menus. route.js
+	    |_reservations.route.js
           |_entrees.route.js
           |_plats.route.js
           |_desserts.route.js
-	      |_boissons.route.js
+	    |_boissons.route.js
    |_upload/
    |_app.js
    |_server.js
@@ -63,7 +60,7 @@ Backend/
 # Les autres dépendances pour le site :
 yarn add express mysql2 argon2 cors nodemailer dotenv helmet uuid zod multer jsonwebtoken nodemon cors
 
-# Explications desdépendances : 
+# Explications des dépendances : 
 
 Express : Sert à créer un serveur web et des API en Node.js.
 helmet : Sert à sécuriser une app Express en ajoutant des en-têtes http.
@@ -77,3 +74,4 @@ Zod (ou Joi) : sert à vérifier que les données envoyées par l’utilisateur 
 multer : Permet de gérer l’envoi de fichiers (image, pdf, etc..) depuis un formulaire.
 jsonwebtoken : Sert à gérer l’authentification avec des Tokens JWT. 
 nodemon : Redémarre le serveur automatiquement quand tu modifies le code (ne prend pas en compte les modifications du fichier.env).
+
