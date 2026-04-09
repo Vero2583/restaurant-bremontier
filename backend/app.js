@@ -3,7 +3,7 @@ import 'dotenv/config';
 import cors from 'cors';
 import helmet from 'helmet';
 
-import authRoutes from './routes/auth.routes.js';
+import authRoutes from './routes/auth.route.js';
 import allergenesRoutes from './routes/allergenes.route.js'
 
 
