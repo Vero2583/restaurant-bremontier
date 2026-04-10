@@ -15,10 +15,12 @@ app.use(express.json());
 app.use(helmet());
 app.use(cors({
     origin: 'http://localhost:5000'
-}))
+}));
 
-app.use('/api/auth', authRoutes)
-app.use('/api/allergenes', allergenesRoutes)
+app.use('/api/auth', authRoutes);
+app.get('/', (req,res) => res.send('API Auth Backend fonctionne'));
+
+app.use('/api/allergenes', allergenesRoutes);
 
 
 
