@@ -12,7 +12,7 @@ import {
   saveResetPassword,
   updatePassqord,
 } from "../models/auth.model.js";
-
+import { sendVerificationEmail, sendResetPasswordEmail } from "../services/mailer.service.js";
 
 
 
