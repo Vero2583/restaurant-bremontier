@@ -9,7 +9,8 @@ const transporter = nodemailer.createTransport({
   secure: false,
   auth: {
       user: process.env.DB_USER
-})
+  }    
+});
 
 transporter.verify((err, success) => {
   if (err) console.error(' SMTP erreur :', err.message);
