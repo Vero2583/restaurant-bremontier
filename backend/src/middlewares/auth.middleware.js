@@ -22,3 +22,10 @@ export const authMiddleware = (req, res, next) => {
     }
 }
 
+// middleware qui va vérifier si on a le bon role pour passer dans une route protégé par un  role 
+
+export const authorize = (roles=[]) => (req, res, next) => {
+    if(!roles.includes(req.user.role)) return res.status(403).json({message: "Accès interdit "})
+    next()    
+}
+

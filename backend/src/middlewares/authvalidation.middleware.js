@@ -40,7 +40,7 @@ export const validateLogin = (req, res, next) => {
     } catch (error) {
         return res.status(400).json({message : error.issues.map((err) => err.message).join(", ") })
     }
-}
+};
 
 // la validation du password 
 
@@ -51,11 +51,11 @@ export const validateResetPasswordRequest = (req, res, next) => {
 
     try {
         
-        schema.parse(req.body)
-        next()
+        schema.parse(req.body);
+        next();
 
     } catch (error) {
         return res.status(400).json({message : error.issues.map((err) => err.message).join(", ") })
     }
-}
+};
 

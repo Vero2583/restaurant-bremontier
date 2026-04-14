@@ -12,7 +12,7 @@ import {
   saveResetPassword,
   updatePassqord,
 } from "../models/auth.model.js";
-import { sendVerificationEmail, sendResetPasswordEmail } from "../services/mailer.service.js";
+import { sendVerificationEmail, sendResetPasswordEmail } from "../config/mailer.js";
 
 
 
@@ -30,7 +30,7 @@ export const register = async (req, res) => {
     const verifyToken = uuid4();
 
     await createUser(email, passwordHash, verifyToken);
-    await sendVerificationMail(email, verifyToken);
+    await sendVerificationEmail(email, verifyToken);
 
     res.status(201).json({ message: "compte crée, verifier votre email" });
 

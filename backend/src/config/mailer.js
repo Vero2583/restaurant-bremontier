@@ -1,16 +1,16 @@
-import nodemailer from 'nodemailer';
+import nodemailer from 'nodemailer'
 import dotenv from "dotenv";
 dotenv.config();
 
 
-
-export const transporter = nodemailer.createTransport({
-  host: process.env.DB_HOST,
-  port: 5000,
+const transporter = nodemailer.createTransport({
+  host: process.env.BREVO_SMTP_HOST,
+  port: Number(process.env.BREVO_SMTP_PORT),
   secure: false,
   auth: {
-      user: process.env.DB_USER
- },
+      user: process.env.BREVO_SMTP_USER,
+      pass: process.env.BREVO_SMTP_PASS
+  }    
 });
 
 transporter.verify((err, success) => {
@@ -32,10 +32,11 @@ export const sendVerificationEmail = async (email, token) => {
 
 export const sendResetPasswordEmail = async (email, token) => {
   await transporter.sendMail({
-    from: '"Auth API" <no-reply@monapi.com>',
+    from: '"Auth API" <bremontier40@gmail.com>',
     to: email,
     subject: "Réinitialisation mot de passe",
     html: `<p>Clique sur le lien pour réinitialiser ton mot de passe :</p>
            <a href="http://localhost:5000/api/auth/reset-password?token=${token}">Réinitialiser</a>`,
   });
 };
+

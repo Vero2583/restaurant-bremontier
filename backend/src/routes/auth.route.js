@@ -16,5 +16,7 @@ router.post("/reset-password", resetPassword)
 router.post("/logout", authMiddleware, logout)
 
 
-export default router 
+
+
+export default router; 
 
