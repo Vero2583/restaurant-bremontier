@@ -94,18 +94,19 @@ export const deleteMenusById = async (id) => {
 
 // Ajouter les id dans les tables de liaison 
 
-export const addMenusEntrees = async (menus_id, entrees_id) => {
+export const addAllergenesMenus = async (menus_id, allergenes_id) => {
 try {
     
-    const [result] = await db.query('INSERT INTO menus_entrees(menus_id, entrees_id) VALUES (?, ?)', [
-        menus_id, entrees_id
+    const [result] = await db.query('INSERT INTO allergenes_menus(menus_id, allergenes_id) VALUES (?, ?)', [
+        menus_id, allergenes_id
     ])
       return result.affectRows
 
 
 } catch (error) {
-     console.error("erreur addMenusEntrees :", error.message)
+     console.error("erreur addAllergenesMenus :", error.message)
         throw error
 }
 
 }
+
