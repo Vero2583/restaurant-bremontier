@@ -1,5 +1,5 @@
 import * as model from '../models/allergenes.model.js'
-import { validateAllergenes } from '../middlewares/validations.middleware.js'
+import { allergenesSchema } from '../validations/allergenes.validation.js';
 
 
 // Créer des allergenes 
@@ -7,43 +7,43 @@ import { validateAllergenes } from '../middlewares/validations.middleware.js'
 export const createAllergenes = async (req, res) => {
     try {
 
-        // Destructuring du body pour récupérer le champ 'name'
-        const { name } = req.body;
+        // Pour récupérer le champ 'nom' dans le sql 
+        const { nom } = req.body;
 
-        if (!name) {
-            return res.status(400).json({ message: 'Le nom de la catégorie est requis' });
+        if (!nom) {
+            return res.status(400).json({ message: 'Le nom des allergenes est requis' });
         }
 
               // Validation via Zod
-        const { error } = validateAllergenes.validate({name} );
+        const { error } = allergenesSchema.validate({ nom });
         if (error) {
-            return res.status(400).json({ message: error.details[0].message });
+           return res.status(400).json({ message: error.details[0].message });
         }
 
         // Appel du modèle pour créer les allergenes
-        await model.createAllergenes(name);
+        await model.createAllergenes(nom);
 
         // Réponse succès
         res.status(201).json({ message: 'Allergenes créées' });
 
     } catch (error) {
-        console.error(' Erreur createCategory :', error.message);
-        res.status(500).json({ message: 'Erreur serveur lors de la création de la catégorie' });
+        console.error('Erreur createAllergenes :', error.message);
+        res.status(500).json({ message: 'Erreur serveur lors de la création des allergenes' });
     }
 };
 
 // Pour récupérer toutes les allergenes
 
-export const getALLAllergenes = async (req, res) => {
+export const getAllergenes = async (req, res) => {
     try {
         // Appel du modèle pour récupérer toutes les catégories
-        const allergenes = await model.getALLAllergenes();
+        const allergenes = await model.getAllergenes();
 
         // Renvoi du résultat au client
         res.json(allergenes);
 
     } catch (error) {
-        console.error(' Erreur getCategories :', error.message);
+        console.error(' Erreur getAllergenes :', error.message);
         res.status(500).json({ message: 'Erreur serveur lors de la récupération des allergenes' });
     }
 };
@@ -63,7 +63,7 @@ export const getAllergenesById = async (req, res) => {
         res.json(allergenes);
 
     } catch (error) {
-        console.error('Erreur getById :', error.message);
+        console.error('Erreur getAllergenesById :', error.message);
         res.status(500).json({ message: 'Erreur serveur lors de la récupération des allergenes' });
     }
 };
@@ -73,19 +73,19 @@ export const getAllergenesById = async (req, res) => {
 export const updateAllergenesById = async (req, res) => {
     try {
         const { id } = req.params;
-        const { name } = req.body;
+        const { nom } = req.body;
 
-        if (!name) {
+        if (!nom) {
             return res.status(400).json({ message: 'Le nom de des allergenes est requis' });
         }
 
         // Validation zod
-        const { error } = validateAllergenes.validate({ name });
+        const { error } = validateAllergenes.validate({ nom });
         if (error) {
             return res.status(400).json({ message: error.details[0].message });
         }
 
-        const affectedRows = await model.updateAllergenesById(id, name);
+        const affectedRows = await model.updateAllergenesById(id, nom);
 
         if (!affectedRows) {
             return res.status(404).json({ message: 'allergenes introuvables' });

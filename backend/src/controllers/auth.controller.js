@@ -10,7 +10,7 @@ import {
   findUserByResetToken,
   verifyUser,
   saveResetPassword,
-  updatePassqord,
+  updatePassword,
 } from "../models/auth.model.js";
 import { sendVerificationEmail, sendResetPasswordEmail } from "../config/mailer.js";
 
@@ -110,7 +110,7 @@ export const resetPassword = async (req, res) => {
         if (!users) return res.status(400).json({message: "Utilisateur non trouver ou token invalide"})
 
         const passwordHash = await argon2.hash(password) 
-        await updatePassqord(users.id, passwordHash)   
+        await updatePassword(users.id, passwordHash)   
  
         await db.query("UPDATE users SET reset_token=NULL WHERE id = ?", [users.id])
 

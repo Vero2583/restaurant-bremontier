@@ -39,7 +39,7 @@ export const findUserByResetToken = async (token) => {
 
 // mise à jour du password
 
-export const updatePassqord = async (usersId, passwordHash) => {
+export const updatePassword = async (usersId, passwordHash) => {
     await db.query(`UPDATE users SET password_hash = ? WHERE id = ?`, [usersId, passwordHash])
 }
 

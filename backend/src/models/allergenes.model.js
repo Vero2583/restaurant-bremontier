@@ -5,38 +5,38 @@ import {db} from '../config/db.js'
 export const createAllergenes = async (nom) => {
     try {
       
-        await db.error('INSERT INTO alllergenes (nom) VALUES (?)', [nom])
+        await db.query('INSERT INTO allergenes (nom) VALUES (?)', [nom])
         
 
     } catch (error) {
-        console.error("erreur lors de la création des allergenes", error.message)
+        console.error("erreur lors de la création des allergenes :", error.message)
         throw error
     }
 } 
 
 // Récuperer tous les allergenes
 
-export const getALLAllergenes = async () => {
+export const getAllergenes = async () => {
     try {
         
         const [rows] = await db.query("SELECT * FROM allergenes")
         return rows
 
     } catch (error) {
-        console.error("erreur lors de la récupération des allergnes", error.message)
+        console.error("erreur getAllergenes :", error.message)
         throw error
     }
 }
 
 // Afficher les allergenes par id
 
-export const getAllAllergenesByIdbyId = async (id) => {
+export const getAllergenesById = async (id) => {
     try {
        const [rows] = await db.query('SELECT * FROM allergenes WHERE id = ?', [id])
        return rows[0]
 
     } catch (error) {
-        console.error("erreur lors de l'affichage id des categories", error.message)
+        console.error("erreur getAllergenesById :", error.message)
         throw error
     }
 }
@@ -46,11 +46,11 @@ export const getAllAllergenesByIdbyId = async (id) => {
 export const updateAllergenesById = async (id, nom) => {
     try {
         
-        const [result] = await db.query('UPDATE allergenes SET name = ? WHERE id= ?', [id, nom])
+        const [result] = await db.query('UPDATE allergenes SET name = ? WHERE id= ?', [id, nom]);
         return result.affectRows
 
     } catch (error) {
-        console.error("erreur lors de la mise à jour id  des allergenes", error.message)
+        console.error("erreur updateAllergenes :", error.message)
         throw error
     }
 }
@@ -60,11 +60,30 @@ export const updateAllergenesById = async (id, nom) => {
 export const deleteAllergenesById = async(id) => {
     try {
         
-        const [result] = await db.query('DELETE FROM allergenes WHERE id = ?', [id])
+        const [result] = await db.query('DELETE FROM allergenes WHERE id = ?', [id]);
         return result.affectRows
 
     } catch (error) {
-        console.error("erreur lors de la suppression  des allergenes", error.message)
+        console.error("erreur deleteAllergenesById :", error.message)
         throw error
     }
 }
+
+// Ajouter les id dans les tables de liaisons 
+
+export const addAllergenesEntrees = async (allergenes_id, entrees_id) => {
+try {
+    
+    const [result] = await db.query('INSERT INTO allergenes_entrees(allergenes_id, entrees_id) VALUES (?, ?)', [
+        allergenes_id, entrees_id
+    ])
+      return result.affectRows
+
+
+} catch (error) {
+     console.error("erreur addAllergenesEntrees :", error.message)
+        throw error
+}
+
+}
+

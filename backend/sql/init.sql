@@ -50,7 +50,7 @@ CREATE TABLE entrees(
   image_id INT,
   nom VARCHAR(255),
   prix DECIMAL(4.2),
-appartient_carte BOOLEAN
+  appartient_carte BOOLEAN
 );
 
 CREATE TABLE plats(
@@ -58,7 +58,7 @@ CREATE TABLE plats(
   image_id INT,
   nom VARCHAR(255),
   prix DECIMAL(4.2),
-appartient_carte BOOLEAN
+  appartient_carte BOOLEAN
 );
 
 CREATE TABLE desserts(
@@ -66,18 +66,19 @@ CREATE TABLE desserts(
   image_id INT UNIQUE,
   nom VARCHAR(255),
   prix DECIMAL(4.2),
-appartient_carte BOOLEAN
+  appartient_carte BOOLEAN
 );
 
 CREATE TABLE boissons(
   id INT PRIMARY KEY AUTO_INCREMENT,
   nom VARCHAR(255),
-  contient_alcool BOOLEAN,
-  prix DECIMAL(4.2)
+  prix DECIMAL(4.2),
+  contient_alcool BOOLEAN
 );
 
 CREATE TABLE menus(
   id INT PRIMARY KEY AUTO_INCREMENT,
+  titre VARCHAR(255),
   prix DECIMAL(4.2),
   texte TEXT
 );
