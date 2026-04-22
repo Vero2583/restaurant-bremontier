@@ -1,5 +1,5 @@
 import * as model from '../models/entrees.model.js'
-//import * as allergenesmodel from '../models/allergenes.model.js'
+import * as allergenesmodel from '../models/allergenes.model.js'
 import {entreesSchema} from '../validations/entrees.validation.js'
 
 
@@ -10,8 +10,8 @@ export const createEntrees = async (req, res) => {
     try {
         // Structure du body
 
-        const { nom, prix, appartient_carte } = req.body;
-
+        const { id, nom, prix, appartient_carte, allergenes, image_id } = req.body;
+        
         
         // Validation via Joi
 
@@ -22,11 +22,14 @@ export const createEntrees = async (req, res) => {
 
         // Appel du modèle pour créer les entrees
 
-        await model.createEntrees({ nom, prix, appartient_carte });
+        const entrees = await model.createEntrees({ nom, prix, appartient_carte });
+        const entrees_id = entrees.insertId 
+        console.log(entrees_id)
 
-        //await foreach (allergenes) of allergenes {
-     //allergenesmodel.addAllergenesEntrees(allergenes_id, entrees_id)
-    //}
+         for (const allergene of allergenes) {
+            console.log(allergene)
+        await allergenesmodel.addAllergenesEntrees(allergene, entrees_id)
+    }
 
 
         // Réponse succès

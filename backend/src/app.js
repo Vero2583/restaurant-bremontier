@@ -12,7 +12,7 @@ import entreesRoutes from './routes/entrees.route.js'
 import platsRoutes from './routes/plats.route.js'
 import dessertsRoutes from './routes/desserts.route.js'
 import boissonsRoutes from './routes/boissons.route.js'
-
+import reservationsRoutes from './routes/reservations.route.js'
 
 
 
@@ -31,7 +31,8 @@ app.use('/api/menus', menusRoutes);
 app.use('/api/entrees', entreesRoutes);
 app.use('/api/plats', platsRoutes);
 app.use('/api/desserts', dessertsRoutes);
-app.use('/api/boissons, boissonsRoutes')
+app.use('/api/boissons', boissonsRoutes);
+app.use('/api/reservations', reservationsRoutes);
 
 
 

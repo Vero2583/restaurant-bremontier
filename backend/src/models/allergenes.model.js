@@ -5,8 +5,8 @@ import {db} from '../config/db.js'
 export const createAllergenes = async (nom) => {
     try {
       
-        await db.query('INSERT INTO allergenes (nom) VALUES (?)', [nom])
-        
+        const [rows] = await db.query('INSERT INTO allergenes (nom) VALUES (?)', [nom])
+        return rows
 
     } catch (error) {
         console.error("erreur lors de la création des allergenes :", error.message)
@@ -82,6 +82,70 @@ try {
 
 } catch (error) {
      console.error("erreur addAllergenesEntrees :", error.message)
+        throw error
+}
+
+}
+
+export const addAllergenesPlats = async (allergenes_id, plats_id) => {
+try {
+    
+    const [result] = await db.query('INSERT INTO allergenes_plats(allergenes_id, plats_id) VALUES (?, ?)', [
+        allergenes_id, plats_id
+    ])
+      return result.affectRows
+
+
+} catch (error) {
+     console.error("erreur addAllergenesPlats :", error.message)
+        throw error
+}
+
+}
+
+export const addAllergenesDesserts = async (allergenes_id, desserts_id) => {
+try {
+    
+    const [result] = await db.query('INSERT INTO allergenes_desserts(allergenes_id, desserts_id) VALUES (?, ?)', [
+        allergenes_id, desserts_id
+    ])
+      return result.affectRows
+
+
+} catch (error) {
+     console.error("erreur addAllergenesDesserts :", error.message)
+        throw error
+}
+
+}
+
+export const addAllergenesboissons = async (allergenes_id, boissons_id) => {
+try {
+    
+    const [result] = await db.query('INSERT INTO allergenes_boissons(allergenes_id, boissons_id) VALUES (?, ?)', [
+        allergenes_id, boissons_id
+    ])
+      return result.affectRows
+
+
+} catch (error) {
+     console.error("erreur addAllergenesBoissons :", error.message)
+        throw error
+}
+
+}
+
+export const addAllergenesMenus = async (menus_id, allergenes_id) => {
+try {
+    
+    const [result] = await db.query('INSERT INTO allergenes_menus(menus_id, allergenes_id) VALUES (?, ?)', [
+        menus_id, allergenes_id
+    ])
+      return result.affectRows
+
+
+} catch (error) {
+     console.error("erreur addAllergenes :", error.message)
         throw error
 }
 

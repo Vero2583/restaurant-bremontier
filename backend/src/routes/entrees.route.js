@@ -1,19 +1,16 @@
 import express from 'express'
-import { createEntrees } from '../controllers/entrees.controller.js'
+import { createEntrees, getEntreesById, getEntrees, updateEntreesById, deleteEntreesById } from '../controllers/entrees.controller.js'
 
 
 
 
 const router = express.Router();
 
-//router.get("/", getAllergenes)
-//router.get("/:id", getAllergenesById)
+router.get("/", getEntrees)
+router.get("/:id", getEntreesById)
 router.post("/",  createEntrees)
-//router.put("/:id", authMiddleware, updateAllergenesById)
-//router.put("/:id", authMiddleware, deleteAllergenesById)
-
-
-
+router.put("/:id", updateEntreesById)
+router.delete("/:id", deleteEntreesById)
 
 
 

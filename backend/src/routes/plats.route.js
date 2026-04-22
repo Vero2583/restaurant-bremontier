@@ -1,5 +1,5 @@
 import express from "express";
-import { getPlats, getPlatsById, createPlats, updatePlatsById } from "../controllers/plats.controller";
+import { getPlats, getPlatsById, createPlats, updatePlatsById } from "../controllers/plats.controller.js";
 
 
 

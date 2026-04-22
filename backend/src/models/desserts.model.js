@@ -1,7 +1,7 @@
 import {db} from '../config/db.js'
 
 
-// Récuperer tous les menus
+// Récuperer tous les desserts
 
 export const getDesserts = async () => {
     try {
@@ -17,7 +17,7 @@ export const getDesserts = async () => {
     }
 }
 
-// Créer une nouveau menus
+// Créer une nouveau desserts
 
 export const createDesserts = async (data) => {
     try {
@@ -38,7 +38,7 @@ export const createDesserts = async (data) => {
     }
 };
 
-// Récuperer un menus par id 
+// Récuperer un desserts par id 
 
 export const getDessertsById = async (id) => {
     try {
@@ -53,7 +53,7 @@ export const getDessertsById = async (id) => {
     }
 }
 
-// Mettre à jour un menus par Id
+// Mettre à jour un desserts par Id
 
 export const updateDessertsById = async (id, data) => {
     try {
@@ -73,7 +73,7 @@ export const updateDessertsById = async (id, data) => {
     }
 };
 
-// Supprimer un menus par id
+// Supprimer un desserts par id
 
 export const deleteDessertsById = async (id) => {
     try {
@@ -90,36 +90,6 @@ export const deleteDessertsById = async (id) => {
     }
 };
 
-// Ajouter les id dans les tables de liaison 
-
-export const addMenusDesserts = async (menus_id, desserts_id) => {
-try {
-    
-    const [result] = await db.query('INSERT INTO menus_desserts(menus_id, desserts_id) VALUES (?, ?)', [
-        menus_id, desserts_id
-    ])
-      return result.affectRows
 
 
-} catch (error) {
-     console.error("erreur addMenusDesserts :", error.message)
-        throw error
-}
 
-}
-
-export const addAllergenesDesserts = async (allergenes_id, desserts_id) => {
-try {
-    
-    const [result] = await db.query('INSERT INTO allergenes_desserts(allergenes_id, desserts_id) VALUES (?, ?)', [
-        allergenes_id, desserts_id
-    ])
-      return result.affectRows
-
-
-} catch (error) {
-     console.error("erreur addAllergenesDesserts :", error.message)
-        throw error
-}
-
-}

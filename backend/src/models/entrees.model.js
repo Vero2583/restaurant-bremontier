@@ -7,13 +7,15 @@ export const createEntrees = async (data) => {
 
     try {
       
-        await db.query('INSERT INTO entrees ( nom, prix, appartient_carte) VALUES (?, ?, ?)', [
+        const [rows] =  await db.query('INSERT INTO entrees ( nom, prix, appartient_carte) VALUES (?, ?, ?)', [
             
         data.nom,
         data.prix,
         data.appartient_carte
        
     ]);
+
+    return rows;
         
 
     } catch (error) {
@@ -93,36 +95,9 @@ export const deleteEntreesById = async (id) => {
     }
 };
 
-// Ajouter les id dans les tables de liaison 
-
-export const addMenusEntrees = async (menus_id, entrees_id) => {
-try {
-    
-    const [result] = await db.query('INSERT INTO menus_entrees(menus_id, entrees_id) VALUES (?, ?)', [
-        menus_id, entrees_id
-    ])
-      return result.affectRows
 
 
-} catch (error) {
-     console.error("erreur addMenusEntrees :", error.message)
-        throw error
-}
-
-}
-
-export const addAllergenesEntrees = async (allergenes_id, entrees_id) => {
-try {
-    
-    const [result] = await db.query('INSERT INTO allergenes_entrees(allergenes_id, entrees_id) VALUES (?, ?)', [
-        allergenes_id, entrees_id
-    ])
-      return result.affectRows
 
 
-} catch (error) {
-     console.error("erreur addAllergenesEntrees :", error.message)
-        throw error
-}
 
-}
+

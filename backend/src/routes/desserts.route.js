@@ -1,5 +1,5 @@
 import express from "express"
-import { getDesserts, getDessertsById, createDesserts, updateDessertsById } from "../controllers/desserts.controller";
+import { getDesserts, getDessertsById, createDesserts, updateDessertsById } from "../controllers/desserts.controller.js";
 
 
 

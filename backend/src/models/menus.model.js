@@ -92,21 +92,63 @@ export const deleteMenusById = async (id) => {
     }
 };
 
-// Ajouter les id dans les tables de liaison 
+// Ajouter les id dans les tables de liaisons 
 
-export const addAllergenesMenus = async (menus_id, allergenes_id) => {
+export const addMenusEntrees = async (menus_id, entrees_id) => {
 try {
     
-    const [result] = await db.query('INSERT INTO allergenes_menus(menus_id, allergenes_id) VALUES (?, ?)', [
-        menus_id, allergenes_id
+    const [result] = await db.query('INSERT INTO menus_entrees(menus_id, entrees_id) VALUES (?, ?)', [
+        menus_id, entrees_id
+    ])
+      return result.affectRows
+
+} catch (error) {
+     console.error("erreur addMenusEntrees :", error.message)
+        throw error
+}
+}
+
+export const addMenusPlats = async (menus_id, plats_id) => {
+try {
+    
+    const [result] = await db.query('INSERT INTO menus_plats(menus_id, plats_id) VALUES (?, ?)', [
+        menus_id, plats_id
+    ])
+      return result.affectRows
+
+} catch (error) {
+     console.error("erreur addMenusPlats :", error.message)
+        throw error
+}
+}
+
+export const addMenusDesserts = async (menus_id, desserts_id) => {
+try {
+    
+    const [result] = await db.query('INSERT INTO menus_desserts(menus_id, desserts_id) VALUES (?, ?)', [
+        menus_id, desserts_id
     ])
       return result.affectRows
 
 
 } catch (error) {
-     console.error("erreur addAllergenesMenus :", error.message)
+     console.error("erreur addMenusDesserts :", error.message)
+        throw error
+}
+}
+
+export const addMenusBoissons = async (menus_id, boissons_id) => {
+try {
+    
+    const [result] = await db.query('INSERT INTO menus_boissons(menus_id, boissons_id) VALUES (?, ?)', [
+        menus_id, boissons_id
+    ])
+      return result.affectRows
+
+
+} catch (error) {
+     console.error("erreur addMenusBoissons :", error.message)
         throw error
 }
 
 }
-

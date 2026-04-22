@@ -92,36 +92,3 @@ export const deletePlatsById = async (id) => {
     }
 };
 
-// Ajouter les id dans les tables de liaison 
-
-export const addMenusPlats = async (menus_id, plats_id) => {
-try {
-    
-    const [result] = await db.query('INSERT INTO menus_plats(menus_id, plats_id) VALUES (?, ?)', [
-        menus_id, plats_id
-    ])
-      return result.affectRows
-
-
-} catch (error) {
-     console.error("erreur addMenusPlats :", error.message)
-        throw error
-}
-
-}
-
-export const addAllergenesPlats = async (allergenes_id, plats_id) => {
-try {
-    
-    const [result] = await db.query('INSERT INTO allergenes_plats(allergenes_id, plats_id) VALUES (?, ?)', [
-        allergenes_id, plats_id
-    ])
-      return result.affectRows
-
-
-} catch (error) {
-     console.error("erreur addAllergenesPlats :", error.message)
-        throw error
-}
-
-}

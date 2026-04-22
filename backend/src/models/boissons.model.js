@@ -92,37 +92,9 @@ export const deleteBoissonsById = async (id) => {
     }
 };
 
-// Ajouter les id dans les tables de liaison 
-
-export const addMenusBoissons = async (menus_id, boissons_id) => {
-try {
-    
-    const [result] = await db.query('INSERT INTO menus_boissons(menus_id, boissons_id) VALUES (?, ?)', [
-        menus_id, boissons_id
-    ])
-      return result.affectRows
 
 
-} catch (error) {
-     console.error("erreur addMenusBoissons :", error.message)
-        throw error
-}
-
-}
-
-export const addAllergenesboissons = async (allergenes_id, boissons_id) => {
-try {
-    
-    const [result] = await db.query('INSERT INTO allergenes_boissons(allergenes_id, boissons_id) VALUES (?, ?)', [
-        allergenes_id, boissons_id
-    ])
-      return result.affectRows
 
 
-} catch (error) {
-     console.error("erreur addAllergenesBoissons :", error.message)
-        throw error
-}
 
-}
 
