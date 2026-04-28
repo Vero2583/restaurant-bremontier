@@ -1,4 +1,6 @@
 import * as model from '../models/boissons.model.js'
+import * as allergenesmodel from '../models/allergenes.model.js'
+import * as menusmodel from '../models/menus.model.js'
 import { boissonsSchema } from '../validations/boissons.validation.js'
 
 
@@ -23,7 +25,7 @@ export const getBoissons = async (req, res) => {
 export const createBoissons = async (req, res) => {
     try {
         // Structure du body
-        const { nom, prix, contient_alcool } = req.body;
+        const { nom, prix, contient_alcool, allergenes, menus } = req.body;
         
 
         // Validation via Joi
@@ -33,7 +35,16 @@ export const createBoissons = async (req, res) => {
         }
 
         // Appel du modèle pour créer des boissons
-        await model.createBoissons({ nom, prix, contient_alcool });
+        const boissons = await model.createBoissons({ nom, prix, contient_alcool });
+        const boissons_id = boissons.insertId
+
+        for ( const allergene of allergenes) {
+            await allergenesmodel.addAllergenesBoissons(allergene, boissons_id)
+        }
+
+        for (const menu of menus) {
+            await menusmodel.addMenusBoissons(menu, boissons_id)
+        }
 
         // Réponse succès
         res.status(201).json({ message: 'Boissons créées' });

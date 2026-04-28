@@ -1,4 +1,5 @@
 import * as model from '../models/menus.model.js'
+import * as allergenesmodel from '../models/allergenes.model.js'
 import { menusSchema } from '../validations/menus.validation.js'
 
 
@@ -33,7 +34,12 @@ export const createMenus = async (req, res) => {
         }
 
         // Appel du modèle pour créer des menus
-        await model.createMenus({ titre, prix, texte });
+        const menus = await model.createMenus({ titre, prix, texte });
+        const menus_id = menus.insertId
+
+        for (allergene of allergenes) {
+            await allergenesmodel.addAllergenesMenus(allergene, menus_id)
+        }
 
         // Réponse succès
         res.status(201).json({ message: 'Menus créées' });

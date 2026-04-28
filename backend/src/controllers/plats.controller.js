@@ -1,4 +1,6 @@
 import * as model from '../models/plats.model.js'
+import * as allergenesmodel from '../models/allergenes.model.js'
+import * as menusmodel from '../models/menus.model.js'
 import { platsSchema } from '../validations/plats.validation.js'
 
 
@@ -23,17 +25,27 @@ export const getPlats = async (req, res) => {
 export const createPlats = async (req, res) => {
     try {
         // Structure du body
-        const { nom, prix } = req.body;
+        const { nom, prix, appartient_carte, image_id, allergenes, menus } = req.body;
         
 
         // Validation via Joi
-        const { error } = platsSchema.validate({ nom, prix });
+        const { error } = platsSchema.validate({ nom, prix, image_id });
         if (error) {
             return res.status(400).json({ message: error.details[0].message });
         }
 
         // Appel du modèle pour créer les plats
-        await model.createPlats({ nom, prix });
+        const plats = await model.createPlats({ nom, prix, appartient_carte });
+        const plats_id = plats.insertId
+
+
+        for (const allergene of allergenes) {
+            await allergenesmodel.addAllergenesPlats(allergene, plats_id)
+        }
+
+        for (const menu of menus) {
+            await menusmodel.addMenusPlats(menu, plats_id)
+        }
 
         // Réponse succès
         res.status(201).json({ message: 'Plats créées' });

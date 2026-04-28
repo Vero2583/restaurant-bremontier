@@ -1,4 +1,6 @@
 import * as model from '../models/menus.model.js'
+import * as allergenesmodel from '../models/allergenes.model.js'
+import * as menusdesserts from '../models/menus.model.js'
 import { dessertsSchema } from '../validations/desserts.validation.js'
 
 
@@ -23,17 +25,26 @@ export const getDesserts = async (req, res) => {
 export const createDesserts = async (req, res) => {
     try {
         // Structure du body
-        const { nom, prix, } = req.body;
+        const { nom, prix, appartient_carte, image_id, allergenes, menus } = req.body;
         
 
         // Validation via Joi
-        const { error } = dessertsSchema.validate({ nom, prix, });
+        const { error } = dessertsSchema.validate({ nom, prix, image_id });
         if (error) {
             return res.status(400).json({ message: error.details[0].message });
         }
 
         // Appel du modèle pour créer les desserts
-        await model.createDesserts({ nom, prix, });
+        const desserts = await model.createDesserts({ nom, prix, appartient_carte });
+        const desserts_id = desserts.insertId
+
+        for (const allergene of allergenes) {
+            await allergenesmodel.addAllergenesDesserts(allergene, desserts_id)
+        }
+
+        for (const menu of menus) {
+            await menusmodel.addMenusDesserts(menu, desserts_id)
+        }
 
         // Réponse succès
         res.status(201).json({ message: 'Desserts créées' });
