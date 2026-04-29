@@ -37,7 +37,7 @@ CREATE TABLE reservations(
 
 CREATE TABLE images(
   id INT PRIMARY KEY AUTO_INCREMENT,
-  image VARCHAR(255)
+  url VARCHAR(255)
 );
 
 CREATE TABLE allergenes(
@@ -87,63 +87,51 @@ CREATE TABLE menus(
 --En sql il n'ya pas de relation many to many donc il faut créer des tables de relations
 
 CREATE TABLE allergenes_entrees(
-entrees_id INT NOT NULL UNIQUE,
-allergenes_id INT NOT NULL UNIQUE,
-FOREIGN KEY(entrees_id)REFERENCES entrees(id),
-FOREIGN KEY(allergenes_id)REFERENCES allergenes(id)
+entrees_id INT PRIMARY KEY NOT NULL UNIQUE,
+allergenes_id INT  PRIMARY KEY NOT NULL UNIQUE,
 );
 
 CREATE TABLE allergenes_plats(
-plats_id INT NOT NULL UNIQUE,
-allergenes_id INT NOT NULL UNIQUE,
-FOREIGN KEY(plats_id)REFERENCES plats(id),
-FOREIGN KEY(allergenes_id)REFERENCES allergenes(id)
+plats_id INT PRIMARY KEY NOT NULL UNIQUE,
+allergenes_id INT PRIMARY KEY NOT NULL UNIQUE,
 );
 CREATE TABLE allergenes_desserts(
-desserts_id INT NOT NULL UNIQUE ,
-allergenes_id INT NOT NULL UNIQUE,
-FOREIGN KEY(desserts_id)REFERENCES desserts(id),
-FOREIGN KEY(allergenes_id)REFERENCES allergenes(id)
+desserts_id INT PRIMARY KEY NOT NULL UNIQUE ,
+allergenes_id INT PRIMARY KEY NOT NULL UNIQUE,
 );
 
 CREATE TABLE allergenes_boissons(
-boissons_id INT NOT NULL UNIQUE,
-allergenes_id INT NOT NULL UNIQUE,
-FOREIGN KEY(boissons_id)REFERENCES boissons(id),
-FOREIGN KEY(allergenes_id)REFERENCES allergenes(id)
+boissons_id INT PRIMARY KEY NOT NULL UNIQUE,
+allergenes_id INT PRIMARY KEY NOT NULL UNIQUE,
+
 );
 
 CREATE TABLE allergenes_menus(
-menus_id INT NOT NULL UNIQUE,
-allergenes_id INT NOT NULL UNIQUE,
-FOREIGN KEY(menus_id)REFERENCES menus(id),
-FOREIGN KEY(allergenes_id)REFERENCES allergenes(id)
+menus_id INT PRIMARY KEY NOT NULL UNIQUE,
+allergenes_id PRIMARY KEY INT NOT NULL UNIQUE,
+
 );
 
 CREATE TABLE menus_entrees(
-menus_id INT NOT NULL UNIQUE,
-entrees_id INT NOT NULL UNIQUE,
-FOREIGN KEY(menus_id)REFERENCES menus(id),
-FOREIGN KEY(entrees_id)REFERENCES entrees(id)
+menus_id INT PRIMARY KEY NOT NULL UNIQUE,
+entrees_id INT PRIMARY KEY NOT NULL UNIQUE,
+
 );
 
 CREATE TABLE menus_plats(
-menus_id INT NOT NULL UNIQUE,
-plats_id INT NOT NULL UNIQUE, 
-FOREIGN KEY(menus_id)REFERENCES menus(id),
-FOREIGN KEY(plats_id)REFERENCES plats(id)
+menus_id INT PRIMARY KEY NOT NULL UNIQUE,
+plats_id INT PRIMARY KEY NOT NULL UNIQUE, 
+
 );
 
 CREATE TABLE menus_desserts(
-menus_id INT NOT NULL UNIQUE,
-desserts_id INT NOT NULL UNIQUE,
-FOREIGN KEY(menus_id)REFERENCES menus(id),
-FOREIGN KEY(desserts_id)REFERENCES desserts(id)
+menus_id INT PRIMARY KEY NOT NULL UNIQUE,
+desserts_id INT PRIMARY KEY NOT NULL UNIQUE,
+
 );
 
 CREATE TABLE menus_boissons(
-menus_id INT NOT NULL UNIQUE,
-boissons_id INT NOT NULL UNIQUE,
-FOREIGN KEY(menus_id)REFERENCES menus(id),
-FOREIGN KEY(boissons_id)REFERENCES boissons(id)
+menus_id INT PRIMARY KEY NOT NULL UNIQUE,
+boissons_id INT PRIMARY KEY NOT NULL UNIQUE,
+
 );

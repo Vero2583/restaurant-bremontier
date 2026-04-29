@@ -1,6 +1,7 @@
 import * as model from '../models/entrees.model.js'
 import * as allergenesmodel from '../models/allergenes.model.js'
 import * as menusmodel from '../models/menus.model.js'
+import * as imagesmodel from '../models/images.model.js'
 import {entreesSchema} from '../validations/entrees.validation.js'
 
 
@@ -20,6 +21,14 @@ export const createEntrees = async (req, res) => {
         if (error) {
             return res.status(400).json({ message: error.details[0].message });
         }
+
+        //Gestion de la photo
+
+
+        const imageURL = req.file.filename || null
+
+        // 2. Création d'une entrée dans ta database 
+        const image = await imagesmodel.createImages({imageURL})
 
         // Appel du modèle pour créer les entrees
 

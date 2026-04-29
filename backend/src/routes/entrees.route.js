@@ -1,6 +1,6 @@
 import express from 'express'
 import { createEntrees, getEntreesById, getEntrees, updateEntreesById, deleteEntreesById } from '../controllers/entrees.controller.js'
-
+import { upload } from '../middlewares/upload.middleware.js'
 
 
 
@@ -8,7 +8,7 @@ const router = express.Router();
 
 router.get("/", getEntrees)
 router.get("/:id", getEntreesById)
-router.post("/",  createEntrees)
+router.post("/", upload, createEntrees)
 router.put("/:id", updateEntreesById)
 router.delete("/:id", deleteEntreesById)
 
