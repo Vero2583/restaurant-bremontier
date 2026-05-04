@@ -24,10 +24,10 @@ export const createEntrees = async (req, res) => {
 
         //Gestion de la photo
 
-
         const imageURL = req.file.filename || null
 
         // 2. Création d'une entrée dans ta database 
+        
         const image = await imagesmodel.createImages({imageURL})
 
         // Appel du modèle pour créer les entrees

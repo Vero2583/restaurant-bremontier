@@ -1,8 +1,8 @@
 # restaurant-bremontier
 projet stage 10 semaines
 
-# Arborescences :
-Backend/
+# Arborescences Backend :
+backend/
   |_src/
     |_config/
      	    |_db.js
