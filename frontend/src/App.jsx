@@ -21,6 +21,9 @@ function App() {
             {/* Les routes protegées  */}
             <Route element={<PrivateRoute />}>
               <Route path="/dashboard" element={<Dahsboard />} />
+
+
+              
             </Route>
 
             {/*Fin  Les routes protegées  */}
