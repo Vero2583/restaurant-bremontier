@@ -8,7 +8,7 @@ const router = express.Router();
 
 router.get("/", getEntrees)
 router.get("/:id", getEntreesById)
-router.post("/", upload, createEntrees)
+router.post("/", upload.single("image"), createEntrees)
 router.put("/:id", updateEntreesById)
 router.delete("/:id", deleteEntreesById)
 

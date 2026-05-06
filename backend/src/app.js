@@ -27,7 +27,7 @@ app.use('/api/auth', authRoutes);
 app.get('/',authMiddleware, authorize(['ADMIN', 'USER']), (req, res) => res.send('API Auth Backend fonctionne'));
 
 app.use('/api/allergenes', allergenesRoutes);
-app.use('/api/menus', menusRoutes);
+app.use('/api/menus', menusRoutes);//
 app.use('/api/entrees', entreesRoutes);
 app.use('/api/plats', platsRoutes);
 app.use('/api/desserts', dessertsRoutes);
