@@ -22,9 +22,9 @@ const Navbar = () => {
       {!user && (
         <>
           {" | "}
-          <Link to="/register">Register</Link>
+          <Link to="/Register">Enregistrement</Link>
           {" | "}
-          <Link to="/login">Login</Link>
+          <Link to="/Login">Connexion</Link>
           {" | "}
         </>
       )}

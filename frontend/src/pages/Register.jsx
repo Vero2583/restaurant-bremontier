@@ -7,6 +7,18 @@ const Register = () => {
 
   const fields = [
     {
+      name: "prénom",
+      label: "Prénom",
+      type: "prénom",
+      validation: {required: "requis"},
+    },
+    {
+      name: "rôle",
+      label: "Rôle",
+      type: "rôle",
+      validation: {required: "requis"},
+    },
+    {
       name: "email",
       label: "Email",
       type: "email",
@@ -23,6 +35,8 @@ const Register = () => {
 
   const onSubmit = async (data) => {
     const formData = new FormData();
+    formData.append("prénom", data.prénom);
+    formData.append("rôle", data.rôle);
     formData.append("email", data.email);
     formData.append("password", data.password);
     
