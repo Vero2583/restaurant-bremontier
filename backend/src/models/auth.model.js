@@ -2,12 +2,12 @@ import {db} from '../config/db.js'
 
 // créer un utilisateur users
 
-export const createUser = async (email, passwordHash, verifyToken) => {
-    const [result] = await db.query("INSERT INTO users (email, password_hash, verify_token) VALUES (?, ?, ?)", 
-        [email, passwordHash, verifyToken]
-    )
+export const createUser = async (prenom, email, passwordHash, verifyToken, role="USER") => {
+    const [result] = await db.query("INSERT INTO users (prenom, email, password_hash, verify_token, role) VALUES (?, ?, ?, ?, ?)", 
+        [prenom, email, passwordHash, verifyToken, role],
+    );
 
-    return result.insertId
+    return result.insertId;
 }
 
 // login trouver un users dans la base de données avec son email

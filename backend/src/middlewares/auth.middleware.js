@@ -2,7 +2,7 @@ import jwt from 'jsonwebtoken'
 import 'dotenv/config'
 
 
-// Vérification d'authentification 
+// middleware pour verifier si on est authentifié 
 
 export const authMiddleware = (req, res, next) => {
 
@@ -14,7 +14,7 @@ export const authMiddleware = (req, res, next) => {
 
     try {
 
-        req.users = jwt.verify(token, process.env.JWT_SECRET)
+        req.user = jwt.verify(token, process.env.JWT_SECRET)
         next()
         
     } catch (error) {

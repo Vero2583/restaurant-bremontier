@@ -7,7 +7,7 @@ const Navbar = () => {
   const { user } = useAuth();
   return (
     <nav>
-      <Link to="/">Accueil</Link>
+      <Link to="/">Formulaire</Link>
       {user && (
         <>
           <p>Bonjour {user.email}</p>

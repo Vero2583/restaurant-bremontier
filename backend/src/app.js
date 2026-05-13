@@ -23,6 +23,9 @@ app.use(cors({
     origin: 'http://localhost:5000'
 }));
 
+// pour avoir accès au dossier upload
+app.use('/uploads', express.static('uploads'));
+
 app.use('/api/auth', authRoutes);
 app.get('/',authMiddleware, authorize(['ADMIN', 'USER']), (req, res) => res.send('API Auth Backend fonctionne'));
 
