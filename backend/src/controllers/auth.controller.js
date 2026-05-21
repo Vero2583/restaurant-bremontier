@@ -21,7 +21,7 @@ import { sendVerificationEmail, sendResetPasswordEmail } from "../config/mailer.
 
 export const register = async (req, res) => {
   try {
-    const { email, password } = req.body;
+    const { prenom, email, password } = req.body;
     const existing = await findUserByEmail(email);
     if (existing)
     return res.status(400).json({ message: "Email déjà utilisé" });
@@ -29,7 +29,7 @@ export const register = async (req, res) => {
     const passwordHash = await argon2.hash(password);
     const verifyToken = uuid4();
 
-    await createUser(email, passwordHash, verifyToken);
+    await createUser(prenom, email, passwordHash, verifyToken);
     await sendVerificationEmail(email, verifyToken);
 
     res.status(201).json({ message: "compte crée, verifier votre email" });

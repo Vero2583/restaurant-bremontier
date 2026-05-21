@@ -41,7 +41,7 @@ const Register = () => {
     formData.append("password", data.password);
     
     try {
-      await api.post("/auth/register", formData);
+      await api.post("/register", formData);
       //navigate("/login");
       navigate("/login");
     } catch (error) {

@@ -2,16 +2,17 @@ import React from 'react'
 
 
 
-function Restaurant() {
+
+const Caroussel = () => {
   return (
     <>
       
 
 
 
-
+      
     </>
   )
 }
 
-export default Restaurant
+export default Caroussel

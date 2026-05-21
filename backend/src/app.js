@@ -19,14 +19,16 @@ import reservationsRoutes from './routes/reservations.route.js'
 const app = express();
 app.use(express.json());
 app.use(helmet());
+
+// Se connecter avec le frontend
 app.use(cors({
-    origin: 'http://localhost:5000'
+    origin: 'http://localhost:5173'
 }));
 
 // pour avoir accès au dossier upload
 app.use('/uploads', express.static('uploads'));
 
-app.use('/api/auth', authRoutes);
+app.use('/api', authRoutes);
 app.get('/',authMiddleware, authorize(['ADMIN', 'USER']), (req, res) => res.send('API Auth Backend fonctionne'));
 
 app.use('/api/allergenes', allergenesRoutes);

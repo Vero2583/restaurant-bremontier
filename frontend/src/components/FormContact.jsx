@@ -4,8 +4,8 @@ const FormContact = () => {
 
   return (
   <>
-    <div className="contact">
-          <h2>Contact</h2>
+    <div className="contact contact-form">
+          
           <form className="contact-htmlForm">
             <label htmlFor="name">Nom</label>
             <input
@@ -25,7 +25,7 @@ const FormContact = () => {
               required
             />
 
-            <label htmlFor="message">message</label>
+            <label htmlFor="message">Messages</label>
             <textarea
               name="message"
               id="message"

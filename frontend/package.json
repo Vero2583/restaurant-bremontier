@@ -10,11 +10,16 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fullcalendar/core": "^6.1.20",
+    "@fullcalendar/daygrid": "^6.1.20",
+    "@fullcalendar/react": "^6.1.20",
     "axios": "^1.16.0",
     "jwt-decode": "^4.0.0",
+    "leaflet": "^1.9.4",
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
     "react-hook-form": "^7.75.0",
+    "react-leaflet": "^5.0.0",
     "react-router-dom": "^7.14.2"
   },
   "devDependencies": {

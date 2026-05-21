@@ -3,10 +3,10 @@ import {db} from '../config/db.js'
 // créer un utilisateur users
 
 export const createUser = async (prenom, email, passwordHash, verifyToken, role="USER") => {
+    console.log(prenom, email, passwordHash, verifyToken, role )
     const [result] = await db.query("INSERT INTO users (prenom, email, password_hash, verify_token, role) VALUES (?, ?, ?, ?, ?)", 
         [prenom, email, passwordHash, verifyToken, role],
     );
-
     return result.insertId;
 }
 

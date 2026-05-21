@@ -2,10 +2,9 @@ import { useForm } from "react-hook-form";
 
 // On défini les composants du formulaire dans les props 
 // Input : les champs , le onSubmit: c'est la fonction appelé lors de la sourmission)  
-// et les sublitLabel qui est le titre du bouton de soumission
+// et submitLabel est le titre du bouton de soumission
 
-const Form = ({ inputs, onSubmit, submitLabel }) => {
-
+const Form = ({inputs, onSubmit, submitLabel}) => {
     // register: est une fonction qui permet d'enregister les champ du formulaire 
     // handleSubmit est la fonction qui gere la valdition aavant l'envoie 
     // errors est un objet qui contient les erreurs de validation pour chaque champ 
