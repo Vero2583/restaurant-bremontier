@@ -6,7 +6,7 @@ import { useForm } from "react-hook-form";
 
 const Form = ({inputs, onSubmit, submitLabel}) => {
     // register: est une fonction qui permet d'enregister les champ du formulaire 
-    // handleSubmit est la fonction qui gere la valdition aavant l'envoie 
+    // handleSubmit est la fonction qui gere la valdition avant l'envoie 
     // errors est un objet qui contient les erreurs de validation pour chaque champ 
   const {
     register,

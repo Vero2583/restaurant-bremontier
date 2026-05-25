@@ -36,6 +36,7 @@ align-items: center;
   display: flex;
   flex-direction: column;
 }
+
 .contact-htmlForm{
     max-width: 600px;
     margin: 0 auto;
@@ -75,6 +76,10 @@ align-items: center;
 margin: 50px;
 }
 
+.section-contact, h2{
+  text-align: center;
+}
+
 .form-contact-wrapper {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -94,5 +99,6 @@ margin: 50px;
 
 .leaflet-container {
   height: 50vh;
-  width: 50wh;
+  width: 30wh;
 }
+

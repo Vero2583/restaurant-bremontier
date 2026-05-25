@@ -70,7 +70,7 @@ const CreateEntree = () => {
     }
 
     try {
-      await api.post("/entree", formData);
+      await api.post("/entrees", formData);
       navigate("/");
     } catch (error) {
       alert(error.response?.data?.message || "Erreur serveur");

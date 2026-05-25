@@ -12,7 +12,7 @@ const Dahsboard = () => {
 
   return (
     <>
-      <div>dashboard</div>
+      <div>Dashboard</div>
 
       <div>
         <label for="mealTypeEntreeRadio">Entrée</label>
@@ -23,15 +23,30 @@ const Dahsboard = () => {
 
         <label for="mealTypeDessertRadio">Dessert</label>
         <input id="mealTypeDessertRadio" type="radio" name="mealType" value="dessert" />
+
+        <label for="mealTypeBoissonRadio">Boisson</label>
+        <input id="mealTypeBoissonRadio" type="radio" name="mealType" value="boisson" />
       </div>
 
       <div id="mealTypeEntree">
-        <h2>Formulaire de création d'entrée :</h2>
+        <h2>Formulaire de création d'entrée</h2>
         <Form
           inputs={[
             {
-              name: "name",
+              name: "nom",
               label: "Nom",
+              type: "text",
+              validation: true,
+            },
+             {
+              name: "prix",
+              label: "Prix",
+              type: "text",
+              validation: true,
+            },
+             {
+              name: "appartient_carte",
+              label: "Appartient_carte",
               type: "text",
               validation: true,
             }
@@ -42,12 +57,24 @@ const Dahsboard = () => {
       </div>
 
       <div id="mealTypePlat" style={{display: "none"}}>
-        <h2>Formulaire de création d'un plat :</h2>
+        <h2>Formulaire de création d'un plat</h2>
         <Form
           inputs={[
             {
-              name: "name",
+              name: "nom",
               label: "Nom",
+              type: "text",
+              validation: true,
+            },
+            {
+              name: "prix",
+              label: "Prix",
+              type: "text",
+              validation: true,
+            },
+             {
+              name: "appartient_carte",
+              label: "Appartient_carte",
               type: "text",
               validation: true,
             }
@@ -58,7 +85,7 @@ const Dahsboard = () => {
       </div>
 
       <div id="mealTypeDessert" style={{display: "none"}}>
-        <h2>Formulaire de création de dessert :</h2>
+        <h2>Formulaire de création de dessert</h2>
         <Form
           inputs={[
             {
@@ -66,10 +93,49 @@ const Dahsboard = () => {
               label: "Nom",
               type: "text",
               validation: true,
+            },
+            {
+              name: "prix",
+              label: "Prix",
+              type: "text",
+              validation: true,
+            },
+             {
+              name: "appartient_carte",
+              label: "Appartient_carte",
+              type: "text",
+              validation: true,
             }
           ]}
           onSubmit={() => {}}
           submitLabel={"Créer un dessert"}
+        />
+      </div>
+      <div id="mealTypeBoisson" style={{display: "none"}}>
+        <h2>Formulaire de création de boisson</h2>
+        <Form
+          inputs={[
+            {
+              name: "name",
+              label: "Nom",
+              type: "text",
+              validation: true,
+            },
+            {
+              name: "prix",
+              label: "Prix",
+              type: "text",
+              validation: true,
+            },
+             {
+              name: "contient_alccol",
+              label: "Contient_alcool",
+              type: "text",
+              validation: true,
+            }
+          ]}
+          onSubmit={() => {}}
+          submitLabel={"Créer une boisson"}
         />
       </div>
     </>
