@@ -1,6 +1,7 @@
 import React from "react";
 import Reservations from "./Reservations";
 import Contact from "./Contact";
+import CardsRestaurant from "../components/CardsRestaurant";
 
 
 
@@ -10,8 +11,6 @@ const Accueil = () => {
   return (
   
   <>
-
-
 
 
   <section id="section" className="nous">
@@ -26,6 +25,7 @@ const Accueil = () => {
         </p>
       </section>
   
+    <CardsRestaurant/>
 
 
 

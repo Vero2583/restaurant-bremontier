@@ -49,7 +49,7 @@ function App() {
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
 
-            <Route path="/accueil" element={<Accueil />} />
+            <Route path="/" element={<Accueil />} />
             <Route path="/restaurant" element={<Restaurant />} />
             <Route path="/reservations" element={<Reservations />} />
             <Route path="/contact" element={<Contact />} />
