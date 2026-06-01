@@ -18,33 +18,36 @@ backend/
 	    |_boissons.controller.js
     |_middlewares/
           |_auth.middleware.js
+          |_authvalidation.middleware.js
           |_upload.middleware.js
-          |_allergenes.middleware.js
-	    |_menus.middleware.js
-	    |_reservations.middleware.js
-          |_entrees.middleware.js
-          |_plats.middleware.js
-          |_desserts.middleware.js
-	    |_boissons.middleware.js
-          |_validation.middleware.js
     |_models/
+          |_allergenes.model.js
           |_auth.model.js
-	    |_allergenes.model.js
-          |_menus.model.js
-	    |_reservations.model.js
-          |_entrees.model.js
-          |_plats.model.js
-          |_desserts.model.js
 	    |_boissons.model.js
+          |_desserts.model.js
+          |_entrees.model.js
+          |_images.model.js
+          |_menus.model.js
+          |_plats.model.js
+	    |_reservations.model.js    
     |_routes/
-          |_auth.route.js
           |_allergenes.route.js
-	    |_menus. route.js
-	    |_reservations.route.js
-          |_entrees.route.js
-          |_plats.route.js
+          |_auth.route.js
+          |_boissons.route.js
           |_desserts.route.js
-	    |_boissons.route.js
+          |_entrees.route.js
+	    |_menus. route.js
+          |_plats.route.js
+	    |_reservations.route.js
+    |_validations/
+          |_allergenes.validation.js
+          |_boissons.validation.js
+          |_desserts.validation.js
+          |_entrees.validation.js
+          |_images.validation.js
+          |_menus.validation.js
+          |_plats.validation.js
+          |_reservations.validation.js       
   |_app.js
   |_server.js
 |_.env
