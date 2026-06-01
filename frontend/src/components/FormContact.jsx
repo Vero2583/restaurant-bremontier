@@ -4,7 +4,7 @@ const FormContact = () => {
 
   return (
   <>
-    <div className="contact contact-form">
+    <div className="contact-form">
           
           <form className="contact-htmlForm">
             <label htmlFor="name">Nom</label>

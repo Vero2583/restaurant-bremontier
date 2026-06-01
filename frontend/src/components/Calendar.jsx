@@ -28,7 +28,7 @@ export default function BookingCalendar() {
 
   return (
     <>
-    <div className="horaire">
+    <div className="calendrier">
     <Calendar
       selected={selected}
       reserved={[
@@ -43,7 +43,7 @@ export default function BookingCalendar() {
     <section>
       <h2>Nos horaires de restauration :</h2>
 
-      <ul className="">
+      <ul className="horaires">
         {horairesmidi.map(({start, end}) => (
           <div key={start}>
             <input type="radio" name="startHour" value={start} id={start} onChange={handleHourChange}/>

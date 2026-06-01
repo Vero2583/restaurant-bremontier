@@ -141,7 +141,7 @@ margin: 50px;
 }
 
 /*Style des horaires dans reservations*/
-.horaire{
+.calendrier{
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
