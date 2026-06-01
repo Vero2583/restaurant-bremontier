@@ -11,16 +11,16 @@ const CreateEntree = () => {
  
 
   useEffect(() => {
-    const fetchEntree = async () => {
+    const fetchEntrees = async () => {
       try {
-        const { data } = await api.get("/entree");
+        const { data } = await api.get("/entrees");
         setEntrees(data);
       } catch (error) {
         console.error("Erreur chargement entree", error);
       }
     };
 
-    fetchEntree();
+    fetchEntrees();
   }, []);
 
   // Champs gérés par Form 

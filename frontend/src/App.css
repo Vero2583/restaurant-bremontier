@@ -1,3 +1,7 @@
+/* Style de la page*/
+main {
+    min-height: calc(100vh - 88px);
+}
 body {
   margin: 0;
   padding: 0;
@@ -9,10 +13,22 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Playfair Display";
 }
 
-main {
-    min-height: calc(100vh - 88px);
+button {
+color: #faf3e0;
+background: #d93d04;
+padding: 12px ;
+border-radius: 9px;
+border: none;
+font-weight: 600;
+cursor: pointer;
+transition:  background 0.3s;
 }
 
+button:hover{
+    background: #6E7F52 ;
+ }
+
+/*Style du header*/ 
 .header { 
 background-color:#5a3e2b ;
 color: #faf3e0;
@@ -21,6 +37,7 @@ justify-content: space-between;
 align-items: center;
 }
 
+/*Style du footer*/ 
 .footer {
   background-color:#5a3e2b ;
   color: #faf3e0;
@@ -32,10 +49,23 @@ align-items: center;
   display: flex;
   flex-direction: row;
 }
-.nav {
+
+.nav-footer {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 }
+
+/*Style de la page contact*/ 
+.contact{
+display: grid;
+grid-template-columns: repeat(2, auto);
+grid-template-rows: repeat(2, auto);
+grid-column-gap: 0px;
+grid-row-gap: 0px;
+gap: 25px 50px;
+
+}
+
 
 .contact-htmlForm{
     max-width: 600px;
@@ -51,41 +81,23 @@ align-items: center;
 
 .contact-htmlForm input , .contact-htmlForm textarea {
     padding: 12px;
-    border-radius: var(--radius);
-    border: 1px solid #2b2b2b;
-    width: 100%; 
-    color: #faf3e0;
-}
-
-.contact-htmlForm button {
-    padding: 12px ;
     border-radius: 9px;
-    border: none;
+    border: 1px solid #2b2b2b;
     color: #faf3e0;
-    background: #d93d04;
-    font-weight: 600;
-    cursor: pointer;
-    transition:  background 0.3s;
- }
-
- .contact-form button:hover{
-    background: #2b2b2b ;
- }
+    width: 100%;
+}
 
 .section-contact {
 margin: 50px;
 }
 
-.section-contact, h2{
-  text-align: center;
-}
 
 .form-contact-wrapper {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 1fr;
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
+    grid-column-gap: 12px;
+    grid-row-gap: 12px;
     
 }
 
@@ -99,18 +111,39 @@ margin: 50px;
 
 .leaflet-container {
   height: 50vh;
-  width: 30wh;
+  width: 300wh;
 }
 
+/*Style des cartes dans restaurants */
 .card_container {
   margin: 0px auto 24px;
   padding: 0 32px;
   max-width: 1000px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 12px;
+  grid-row-gap: 12px;
+  
+}
+.card{
+  border: 3px solid #6E7F52;
+  border-radius: 9px;
+}
+.card h3{
+  text-align: center;
+}
+
+.card button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*Style des horaires dans reservations*/
+.horaire{
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  align-content: center;
-  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 

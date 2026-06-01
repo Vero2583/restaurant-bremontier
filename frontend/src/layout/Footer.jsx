@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <>
       <footer className="footer">
-        <div className="nav">
+        <div className="nav-footer">
           <NavLink style={{ padding: "1rem", color: "#faf3e0" }} to="/mention">
             Mention legal
           </NavLink>
@@ -14,7 +14,7 @@ const Footer = () => {
           </NavLink>
         </div>
         <div className="footer-info">
-          <h3>Nos coordonnées</h3>
+          <h2>Nos coordonnées</h2>
           <ul className="contact">
             <li>📍 110 rue des hauts fourneaux, 40210 Labouheyere</li>
             <li>✉️ audelarrieu040@gmail.com</li>

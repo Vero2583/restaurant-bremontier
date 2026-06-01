@@ -12,6 +12,7 @@ import Accueil from "./pages/Accueil.jsx";
 import Restaurant from "./pages/Restaurant.jsx";
 import Reservations from "./pages/Reservations.jsx";
 import Contact from "./pages/Contact.jsx";
+import Entrees from "./components/Entrees.jsx";
 
 
 
@@ -51,6 +52,7 @@ function App() {
 
             <Route path="/" element={<Accueil />} />
             <Route path="/restaurant" element={<Restaurant />} />
+            <Route path="/entrees" element={<Entrees />} />
             <Route path="/reservations" element={<Reservations />} />
             <Route path="/contact" element={<Contact />} />
         </Routes>

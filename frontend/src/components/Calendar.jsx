@@ -1,34 +1,66 @@
-import FullCalendar from '@fullcalendar/react'
-import dayGridPlugin from '@fullcalendar/daygrid'
+import { useState, useEffect } from "react";
+import { Calendar } from "@demark-pro/react-booking-calendar";
+import horairesmidi from "../data/horairesmidi";
+import horairessoir from "../data/horairessoir"
 
-const Calendar = [
-  { title: 'Meeting', start: new Date() }
-]
 
-export function DemoApp() {
-  return (
-    <div>
-      <h1>Demo App</h1>
-      <FullCalendar
-        plugins={[dayGridPlugin]}
-        initialView='dayGridMonth'
-        weekends={false}
-        events={Calendar}
-        eventContent={renderEventContent}
-      />
-    </div>
-  )
-}
+import "@demark-pro/react-booking-calendar/dist/react-booking-calendar.css";
 
-// a custom render function
-function renderEventContent(eventInfo) {
+export default function BookingCalendar() {
+  const [selected, setSelected] = useState([null, null]);
+  const [startHour, setStartHour] = useState(null);
+
+  
+
+  function handleCalendarChange(e) {
+    console.log(e)
+    setSelected(e);
+  }
+
+  function handleHourChange(e) {
+    console.log(e);
+    setStartHour(e.target.value);
+  }
+
+  useEffect(() => {
+    console.log(selected, startHour);
+  }, [selected, startHour]);
+
   return (
     <>
-      <b>{eventInfo.timeText}</b>
-      <i>{eventInfo.event.title}</i>
+    <div className="horaire">
+    <Calendar
+      selected={selected}
+      reserved={[
+        {
+          startDate: new Date(2030, 4, 12, 14, 0),
+          endDate: new Date(2030, 4, 14, 10, 0),
+        },
+      ]}
+      onChange={handleCalendarChange}
+    />
+
+    <section>
+      <h2>Nos horaires de restauration :</h2>
+
+      <ul className="">
+        {horairesmidi.map(({start, end}) => (
+          <div key={start}>
+            <input type="radio" name="startHour" value={start} id={start} onChange={handleHourChange}/>
+            <label htmlFor={start}>{start} - {end}</label>
+          </div>
+        ))}
+      </ul>
+      <ul>
+        {horairessoir.map(({start, end}) => (
+          <div key={start}>
+            <input type="radio" name="startHour" value={start} id={start} onChange={handleHourChange}/>
+            <label htmlFor={start}>{start} - {end}</label>
+          </div>
+        ))}
+      </ul>
+    </section>
+    </div>
     </>
-  )
+  );
 }
-
-
-export default Calendar;

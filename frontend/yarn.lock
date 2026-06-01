@@ -111,6 +111,11 @@
   dependencies:
     "@babel/types" "^7.29.0"
 
+"@babel/runtime@^7.0.0":
+  version "7.29.7"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.29.7.tgz#12022450c45a4da6d8d8287b18a4ff2ddb23f768"
+  integrity sha512-Nq8OhGWiZIZGV6hLHoyAKLLcJihP/xFeBMGJoUrxTX2psI8dCifzLhZISFb+VWS3wFMRDmCGw5R+dOySCqPLhw==
+
 "@babel/template@^7.28.6":
   version "7.28.6"
   resolved "https://registry.yarnpkg.com/@babel/template/-/template-7.28.6.tgz#0e7e56ecedb78aeef66ce7972b082fce76a23e57"
@@ -140,6 +145,15 @@
   dependencies:
     "@babel/helper-string-parser" "^7.27.1"
     "@babel/helper-validator-identifier" "^7.28.5"
+
+"@demark-pro/react-booking-calendar@^4.0.6":
+  version "4.0.6"
+  resolved "https://registry.yarnpkg.com/@demark-pro/react-booking-calendar/-/react-booking-calendar-4.0.6.tgz#ba84d1884c9284f5b358f720b5a214b267144a71"
+  integrity sha512-Z9N6lTTAYCll8Kgrm16l5ZdWRGXmlTAXtW8FXUvm0DbMyRj9ie0zoRx92+8/FGL6193XQxzN+qbJgRdBaXL3Ew==
+  dependencies:
+    memoize-one "^6.0.0"
+    react-virtualized-auto-sizer "^1.0.24"
+    react-window "^1.8.10"
 
 "@emnapi/core@1.10.0":
   version "1.10.0"
@@ -215,23 +229,6 @@
   dependencies:
     "@eslint/core" "^1.2.1"
     levn "^0.4.1"
-
-"@fullcalendar/core@^6.1.20":
-  version "6.1.20"
-  resolved "https://registry.yarnpkg.com/@fullcalendar/core/-/core-6.1.20.tgz#e4cfa767a9b8b7dad015b33fcb8acb0fac986a85"
-  integrity sha512-1cukXLlePFiJ8YKXn/4tMKsy0etxYLCkXk8nUCFi11nRONF2Ba2CD5b21/ovtOO2tL6afTJfwmc1ed3HG7eB1g==
-  dependencies:
-    preact "~10.12.1"
-
-"@fullcalendar/daygrid@^6.1.20":
-  version "6.1.20"
-  resolved "https://registry.yarnpkg.com/@fullcalendar/daygrid/-/daygrid-6.1.20.tgz#fcf33af4ea908b46fd755414278341811e01bdf8"
-  integrity sha512-AO9vqhkLP77EesmJzuU+IGXgxNulsA8mgQHynclJ8U70vSwAVnbcLG9qftiTAFSlZjiY/NvhE7sflve6cJelyQ==
-
-"@fullcalendar/react@^6.1.20":
-  version "6.1.20"
-  resolved "https://registry.yarnpkg.com/@fullcalendar/react/-/react-6.1.20.tgz#7f2a8ede416364ab3b426c8e7c6739ec0ec476d0"
-  integrity sha512-1w0pZtceaUdfAnxMSCGHCQalhi+mR1jOe76sXzyAXpcPz/Lf0zHSdcGK/U2XpZlnQgQtBZW+d+QBnnzVQKCxAA==
 
 "@humanfs/core@^0.19.2":
   version "0.19.2"
@@ -1055,6 +1052,16 @@ math-intrinsics@^1.1.0:
   resolved "https://registry.yarnpkg.com/math-intrinsics/-/math-intrinsics-1.1.0.tgz#a0dd74be81e2aa5c2f27e65ce283605ee4e2b7f9"
   integrity sha512-/IXtbwEk5HTPyEwyKX6hGkYXxM9nbj64B+ilVJnC/R6B0pH5G4V3b0pVbL7DBj4tkhBAppbQUlf6F6Xl9LHu1g==
 
+"memoize-one@>=3.1.1 <6":
+  version "5.2.1"
+  resolved "https://registry.yarnpkg.com/memoize-one/-/memoize-one-5.2.1.tgz#8337aa3c4335581839ec01c3d594090cebe8f00e"
+  integrity sha512-zYiwtZUcYyXKo/np96AGZAckk+FWWsUdJ3cHGGmld7+AhvcWmQyGCYUh1hc4Q/pkOhb65dQR/pqCyK0cOaHz4Q==
+
+memoize-one@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/memoize-one/-/memoize-one-6.0.0.tgz#b2591b871ed82948aee4727dc6abceeeac8c1045"
+  integrity sha512-rkpe71W0N0c0Xz6QD0eJETuWAJGnJ9afsl1srmwPrI+yBCkge5EycXXbYRyvL29zZVUWQCY7InPRCv3GDXuZNw==
+
 mime-db@1.52.0:
   version "1.52.0"
   resolved "https://registry.yarnpkg.com/mime-db/-/mime-db-1.52.0.tgz#bbabcdc02859f4987301c856e3387ce5ec43bf70"
@@ -1149,11 +1156,6 @@ postcss@^8.5.10:
     picocolors "^1.1.1"
     source-map-js "^1.2.1"
 
-preact@~10.12.1:
-  version "10.12.1"
-  resolved "https://registry.yarnpkg.com/preact/-/preact-10.12.1.tgz#8f9cb5442f560e532729b7d23d42fd1161354a21"
-  integrity sha512-l8386ixSsBdbreOAkqtrwqHwdvR35ID8c3rKPa8lCWuO86dBi32QWHV4vfsZK1utLLFMvw+Z5Ad4XLkZzchscg==
-
 prelude-ls@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/prelude-ls/-/prelude-ls-1.2.1.tgz#debc6489d7a6e6b0e7611888cec880337d316396"
@@ -1202,6 +1204,19 @@ react-router@7.14.2:
   dependencies:
     cookie "^1.0.1"
     set-cookie-parser "^2.6.0"
+
+react-virtualized-auto-sizer@^1.0.24:
+  version "1.0.26"
+  resolved "https://registry.yarnpkg.com/react-virtualized-auto-sizer/-/react-virtualized-auto-sizer-1.0.26.tgz#e9470ef6a778dc4f1d5fd76305fa2d8b610c357a"
+  integrity sha512-CblNyiNVw2o+hsa5/49NH2ogGxZ+t+3aweRvNSq7TVjDIlwk7ir4lencEg5HxHeSzwNarSkNkiu0qJSOXtxm5A==
+
+react-window@^1.8.10:
+  version "1.8.11"
+  resolved "https://registry.yarnpkg.com/react-window/-/react-window-1.8.11.tgz#a857b48fa85bd77042d59cc460964ff2e0648525"
+  integrity sha512-+SRbUVT2scadgFSWx+R1P754xHPEqvcfSfVX10QYg6POOz+WNgkN48pS+BtZNIMGiL1HYrSEiCkwsMS15QogEQ==
+  dependencies:
+    "@babel/runtime" "^7.0.0"
+    memoize-one ">=3.1.1 <6"
 
 react@^19.2.5:
   version "19.2.5"

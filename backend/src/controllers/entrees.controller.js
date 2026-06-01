@@ -58,9 +58,9 @@ export const createEntrees = async (req, res) => {
 export const getEntrees = async (req, res) => {
     try {
         // Appel du modèle pour récupérer toutes les entrees
-        const annonces = await model.getEntrees();
+        const entrees = await model.getEntrees();
 
-        // Envoi des annonces au client
+        // Envoi des entrees au client
         res.json(entrees);
 
     } catch (error) {
