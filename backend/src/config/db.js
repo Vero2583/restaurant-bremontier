@@ -9,7 +9,8 @@ try {
    db= mysql.createPool({
     host:process.env.DB_HOST,
     user: process.env.DB_USER,
-    database: process.env.DB_NAME
+    database: process.env.DB_NAME,
+    //pass: process.env.DB_PASS
    });
    await db.getConnection();
    console.log(`connexion à la base de données ${process.env.DB_NAME} réussie`); 

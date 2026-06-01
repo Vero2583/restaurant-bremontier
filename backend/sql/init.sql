@@ -18,7 +18,7 @@ CREATE TABLE users(
   verify_token VARCHAR(50) DEFAULT NULL,
   reset_token VARCHAR(50) DEFAULT NULL,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON   UPDATE CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   INDEX idx_email (email),
   INDEX idx_verify_token (verify_token),
   INDEX idx_reset_token (reset_token)
