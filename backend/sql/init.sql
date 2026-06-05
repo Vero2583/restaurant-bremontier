@@ -80,8 +80,15 @@ CREATE TABLE menus(
   texte TEXT
 );
 
+CREATE TABLE contact(
+  nom VARCHAR(255),
+  email VARCHAR(255) DEFAULT NULL UNIQUE,
+  message TEXT
+);
+
 --Créations des tables de laisons:
---En sql il n'ya pas de relation many to many donc il faut créer des tables de relations
+--En sql il n'y a pas de relation many to many donc il faut créer des tables de relations
+--sauf il faut enlever primary key et les mettres manuellement sur phpmyadmin
 
 CREATE TABLE allergenes_entrees(
 entrees_id INT PRIMARY KEY NOT NULL,
@@ -132,8 +139,4 @@ menus_id INT PRIMARY KEY NOT NULL,
 boissons_id INT PRIMARY KEY NOT NULL
 );
 
-CREATE TABLE contact(
-  nom VARCHAR(255),
-  email VARCHAR(255) DEFAULT NULL UNIQUE,
-  message TEXT
-);
+
