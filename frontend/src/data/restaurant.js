@@ -1,6 +1,6 @@
 const cards = [
     {
-      imgSrc: "https://placehold.co/120x140",
+      imgSrc: "/cartes/oeufs mimosas.png",
       imgAlt: "les entrées",
       title: "Carte des entrees",
       buttonTitle: "Voir les entrees"

@@ -1,12 +1,9 @@
---Création de la base de données:
 
 CREATE DATABASE IF NOT EXISTS restaurant_bremontier
 CHARACTER SET utf8mb4
 COLLATE utf8mb4_unicode_ci ;
 
 USE restaurant_bremontier;
-
---Créations des tables:
 
 CREATE TABLE users(
   id INT PRIMARY KEY AUTO_INCREMENT,
@@ -87,51 +84,56 @@ CREATE TABLE menus(
 --En sql il n'ya pas de relation many to many donc il faut créer des tables de relations
 
 CREATE TABLE allergenes_entrees(
-entrees_id INT PRIMARY KEY NOT NULL UNIQUE,
-allergenes_id INT  PRIMARY KEY NOT NULL UNIQUE,
+entrees_id INT PRIMARY KEY NOT NULL,
+allergenes_id INT  PRIMARY KEY NOT NULL 
 );
 
 CREATE TABLE allergenes_plats(
-plats_id INT PRIMARY KEY NOT NULL UNIQUE,
-allergenes_id INT PRIMARY KEY NOT NULL UNIQUE,
+plats_id INT PRIMARY KEY NOT NULL,
+allergenes_id INT PRIMARY KEY NOT NULL 
 );
 CREATE TABLE allergenes_desserts(
-desserts_id INT PRIMARY KEY NOT NULL UNIQUE ,
-allergenes_id INT PRIMARY KEY NOT NULL UNIQUE,
+desserts_id INT PRIMARY KEY NOT NULL,
+allergenes_id INT PRIMARY KEY NOT NULL 
 );
 
 CREATE TABLE allergenes_boissons(
-boissons_id INT PRIMARY KEY NOT NULL UNIQUE,
-allergenes_id INT PRIMARY KEY NOT NULL UNIQUE,
+boissons_id INT PRIMARY KEY NOT NULL,
+allergenes_id INT PRIMARY KEY NOT NULL
 
 );
 
 CREATE TABLE allergenes_menus(
-menus_id INT PRIMARY KEY NOT NULL UNIQUE,
-allergenes_id PRIMARY KEY INT NOT NULL UNIQUE,
+menus_id INT PRIMARY KEY NOT NULL,
+allergenes_id INT PRIMARY KEY NOT NULL
 
 );
 
 CREATE TABLE menus_entrees(
-menus_id INT PRIMARY KEY NOT NULL UNIQUE,
-entrees_id INT PRIMARY KEY NOT NULL UNIQUE,
+menus_id INT PRIMARY KEY NOT NULL,
+entrees_id INT PRIMARY KEY NOT NULL
 
 );
 
 CREATE TABLE menus_plats(
-menus_id INT PRIMARY KEY NOT NULL UNIQUE,
-plats_id INT PRIMARY KEY NOT NULL UNIQUE, 
+menus_id INT PRIMARY KEY NOT NULL,
+plats_id INT PRIMARY KEY NOT NULL 
 
 );
 
 CREATE TABLE menus_desserts(
-menus_id INT PRIMARY KEY NOT NULL UNIQUE,
-desserts_id INT PRIMARY KEY NOT NULL UNIQUE,
+menus_id INT PRIMARY KEY NOT NULL,
+desserts_id INT PRIMARY KEY NOT NULL
 
 );
 
 CREATE TABLE menus_boissons(
-menus_id INT PRIMARY KEY NOT NULL UNIQUE,
-boissons_id INT PRIMARY KEY NOT NULL UNIQUE,
+menus_id INT PRIMARY KEY NOT NULL,
+boissons_id INT PRIMARY KEY NOT NULL
+);
 
+CREATE TABLE contact(
+  nom VARCHAR(255),
+  email VARCHAR(255) DEFAULT NULL UNIQUE,
+  message TEXT
 );

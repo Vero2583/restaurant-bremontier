@@ -60,7 +60,7 @@ backend/
 # Installation de yarn
     npm install yarn
 # Les autres dépendances pour le site :
-yarn add express mysql2 argon2 cors nodemailer dotenv helmet uuid zod multer jsonwebtoken nodemon 
+yarn add express mysql2 argon2 cors nodemailer dotenv helmet uuid zod multer jsonwebtoken nodemon joi
 
 # Explications des dépendances : 
 

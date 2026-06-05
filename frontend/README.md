@@ -24,3 +24,55 @@ Yarn create vite
 yarn add axios jwt-decode react-hook-form react-router-dom
 
 ## Arborescence du Frontend :
+
+frontend/
+├─ public/
+│ └─ index.html
+│
+├─ src/
+│ ├─ api/
+│ │ └─ axios.js                # Instance Axios + interceptors
+│  │
+│ ├─ components/
+│ │     ├─ Layout.jsx/    
+│ │          ├─ Header.jsx    
+│ │          ├─ Footer.jsx   
+│ │          ├─ Navbar.jsx                                                   
+│ │ ├─ Form.jsx                # Formulaire générique réutilisable
+│ │ └─ Loader.jsx              # Chargement global (optionnel)
+│ │ └─ LogoutBtn.jsx              
+│  │
+│ ├─ contexte/
+│ │ └─ AuthContext.jsx          # Authentification globale
+│  │
+│ ├─ routes/
+│ │ └─ PrivateRoute.jsx        # Protection des routes
+│  │
+│ ├─ pages/
+│ │ ├─ Login.jsx               # Page login
+│ │ ├─ Register.jsx           # Page register
+│ │ ├─ Dashboard.jsx      # Zone protégée
+│  │ |─ Accueil.jsx      
+│  │ |─ Contact.jsx      
+│  │ |─ Restaurant.jsx 
+│  │ |─ Reservations.jsx      
+│  │
+│ ├─ hooks/
+│ │ └─ useAuth.js              # Hook d’accès au contexte (optionnel)
+│  │
+│ ├─ styles/
+│ │ └─ main.css                # Styles globaux
+│  │
+│ ├─ App.jsx                    # Router + Providers
+│  └─ main.jsx                   # Point d’entrée React
+│
+├─ .env                          # Variables d’environnement
+├─ package.json
+└─ vite.config.js
+
+## Les dependances installées:
+ -axios: pour pouvoir communiquer avec le backend en utilisant des requêtes
+ -jwt-decode:  pour deshacher le token
+ -react-hook-form:  pour les formulaires de contacts
+ -react-router-dom :  pour les routes de mes pages
+ -"@demark-pro/react-booking-calendar" : pour installer un calendrier pour les reservations
