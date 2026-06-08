@@ -13,6 +13,7 @@ const Navigation = () => {
     <NavLink style={{padding: "1rem", color: "#faf3e0" }} to="/restaurant">Restaurant</NavLink>
     <NavLink style={{padding: "1rem", color: "#faf3e0" }} to="/reservations">Reservations</NavLink>
     <NavLink style={{padding: "1rem", color: "#faf3e0" }} to="/contact">Contact</NavLink>
+    <NavLink style={{padding: "1rem", color: "#faf3e0" }} to="/"></NavLink>
     {/*<button id="menu-btn" aria-label="Ouvrir la sidebar">☰</button>*/}
     
 

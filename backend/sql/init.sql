@@ -91,52 +91,51 @@ CREATE TABLE contact(
 --sauf il faut enlever primary key et les mettres manuellement sur phpmyadmin
 
 CREATE TABLE allergenes_entrees(
-entrees_id INT PRIMARY KEY NOT NULL,
-allergenes_id INT  PRIMARY KEY NOT NULL 
+entrees_id INT NOT NULL,
+allergenes_id INT NOT NULL 
 );
 
 CREATE TABLE allergenes_plats(
-plats_id INT PRIMARY KEY NOT NULL,
-allergenes_id INT PRIMARY KEY NOT NULL 
+plats_id INT NOT NULL,
+allergenes_id INT NOT NULL 
 );
 CREATE TABLE allergenes_desserts(
-desserts_id INT PRIMARY KEY NOT NULL,
-allergenes_id INT PRIMARY KEY NOT NULL 
+desserts_id INT NOT NULL,
+allergenes_id INT NOT NULL 
 );
 
 CREATE TABLE allergenes_boissons(
-boissons_id INT PRIMARY KEY NOT NULL,
-allergenes_id INT PRIMARY KEY NOT NULL
+boissons_id INT NOT NULL,
+allergenes_id INT NOT NULL
 
 );
 
 CREATE TABLE allergenes_menus(
-menus_id INT PRIMARY KEY NOT NULL,
-allergenes_id INT PRIMARY KEY NOT NULL
+menus_id INT NOT NULL,
+allergenes_id INT NOT NULL
 
 );
 
 CREATE TABLE menus_entrees(
-menus_id INT PRIMARY KEY NOT NULL,
-entrees_id INT PRIMARY KEY NOT NULL
+menus_id INT NOT NULL,
+entrees_id INT NOT NULL
 
 );
 
 CREATE TABLE menus_plats(
-menus_id INT PRIMARY KEY NOT NULL,
-plats_id INT PRIMARY KEY NOT NULL 
+menus_id INT NOT NULL,
+plats_id INT NOT NULL 
 
 );
 
 CREATE TABLE menus_desserts(
-menus_id INT PRIMARY KEY NOT NULL,
-desserts_id INT PRIMARY KEY NOT NULL
+menus_id INT NOT NULL,
+desserts_id INT NOT NULL
 
 );
 
 CREATE TABLE menus_boissons(
-menus_id INT PRIMARY KEY NOT NULL,
-boissons_id INT PRIMARY KEY NOT NULL
+menus_id INT NOT NULL,
+boissons_id INT NOT NULL
 );
-
 

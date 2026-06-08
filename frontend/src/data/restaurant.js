@@ -6,7 +6,7 @@ const cards = [
       buttonTitle: "Voir les entrees"
     },
     {
-      imgSrc: "https://placehold.co/120x140",
+      imgSrc: "/cartes/plats.png",
       imgAlt: "les plats",
       title: "Carte des plats",
       buttonTitle: "Voir les plats"
