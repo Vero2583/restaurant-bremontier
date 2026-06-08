@@ -11,7 +11,7 @@ export const getDesserts = async (req, res) => {
         // Appel du modèle pour récupérer toutes les desserts
         const menus = await model.getDesserts();
 
-        // Envoi des annonces au client
+        // Envoi des desserts
         res.json(desserts);
 
     } catch (error) {

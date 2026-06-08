@@ -21,7 +21,7 @@ import { sendVerificationEmail, sendResetPasswordEmail } from "../config/mailer.
 
 export const register = async (req, res) => {
   try {
-    const { prenom, email, password } = req.body;
+    const { prenom, email, password, role } = req.body;
     const existing = await findUserByEmail(email);
     if (existing)
     return res.status(400).json({ message: "Email déjà utilisé" });
@@ -29,7 +29,7 @@ export const register = async (req, res) => {
     const passwordHash = await argon2.hash(password);
     const verifyToken = uuid4();
 
-    await createUser(prenom, email, passwordHash, verifyToken);
+    await createUser(prenom, email, passwordHash, verifyToken, role);
     await sendVerificationEmail(email, verifyToken);
 
     res.status(201).json({ message: "compte crée, verifier votre email" });
@@ -73,7 +73,7 @@ export const login = async (req, res) => {
         return res.status(400).json({message: "Email ou mot de passe incorrect"})
        }
         
-       const token = jwt.sign({id: users.id, email: users.email}, process.env.JWT_SECRET, {expiresIn: process.env.JWT_EXPIRES_IN})
+       const token = jwt.sign({id: users.id, email: users.email, role: users.role }, process.env.JWT_SECRET, {expiresIn: process.env.JWT_EXPIRES_IN})
        return res.status(200).json({token})
 
     } catch (error) {

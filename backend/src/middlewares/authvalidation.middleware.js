@@ -6,7 +6,7 @@ import {z} from "zod"
 
 export const validateRegister = (req, res, next) => {
     const schema = z.object({
-        prenom:z.string(),
+        prenom: z.string(),
         email: z.email(),
         password: z.string().min(8),
         confirmPassword: z.string().min(8)
