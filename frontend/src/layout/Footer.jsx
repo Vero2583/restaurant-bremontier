@@ -9,9 +9,6 @@ const Footer = () => {
           <NavLink style={{ padding: "1rem", color: "#faf3e0" }} to="/mention">
             Mention legal
           </NavLink>
-          <NavLink style={{ padding: "1rem", color: "#faf3e0" }} to="/login">
-            Connexion
-          </NavLink>
         </div>
         <div className="footer-info">
           <h2>Nos coordonnées</h2>
