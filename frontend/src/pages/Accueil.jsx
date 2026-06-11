@@ -1,6 +1,5 @@
 import React from "react";
 import Reservations from "./Reservations";
-import Contact from "./Contact";
 import CardsRestaurant from "../components/CardsRestaurant";
 
 
