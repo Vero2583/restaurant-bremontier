@@ -2,6 +2,7 @@
 main {
   min-height: calc(100vh - 88px);
 }
+
 body {
   margin: 0;
   padding: 0;
@@ -16,21 +17,51 @@ h4,
 h5,
 h6 {
   font-family: "Playfair Display";
+  text-align: center;
 }
 
+/*Style tous les bouttons */
 button {
   color: #faf3e0;
   background: #d93d04;
-  padding: 12px;
   border-radius: 9px;
-  border: none;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.3s;
+  width: 50%;
+  margin-bottom: 5%;
+
+
+  @media (min-width: 1200px) {
+    padding: 12px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
 }
 
 button:hover {
-  background: #6e7f52;
+  background: #2b2b2b;
+}
+
+/*Style dashboard*/
+
+.dashboard {
+  max-width: 600px;
+  margin: auto;
+  margin-top: 64px;
+  border: solid 2px;
+  border-radius: 9px;
+  padding: 35px;
+}
+
+.form-login {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 10px;
+  border: solid #5a3e2b 5px;
+  border-radius: 9px;
+  margin: 200px 100px 50px;
+
 }
 
 /*Style du header*/
@@ -38,38 +69,95 @@ button:hover {
   background-color: #5a3e2b;
   color: #faf3e0;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  max-width: 100vw;
+  overflow: hidden;
+  padding: 0px;
   align-items: center;
+  font-size: 0.5rem;
+  overflow: hidden;
+
+  @media (min-width: 1200px) {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+}
+
+.img-logo {
+  padding: 10px;
 }
 
 /*Style du footer*/
 .footer {
+  /* 320px */
   background-color: #5a3e2b;
   color: #faf3e0;
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  max-width: 100vw;
+  overflow: hidden;
+
+  /* plus grand */
+  @media (min-width: 1200px) {
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+  }
 }
 .footer-info {
-  display: flex;
   flex-direction: row;
+  text-align: left;
+
+  @media (min-width: 1200px) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 1rem;
+    padding: 5px;
+  }
+}
+
+.footer-info h2 {
+  text-align: center;
 }
 
 .nav-footer {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1rem;
+}
+
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0;
+  padding: 10px;
+  font-size: 0.8rem;
+
+  @media (min-width: 1200px) {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(2, auto);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    gap: 25px 50px;
+  }
+}
+
+/*paragraphe acceuil*/
+
+.histoire{
+  text-align: justify;
+  font-size: 400;
 }
 
 /*Style de la page contact*/
-.contact {
-  display: grid;
-  grid-template-columns: repeat(2, auto);
-  grid-template-rows: repeat(2, auto);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-  gap: 25px 50px;
-}
-
 .contact-htmlForm {
   max-width: 600px;
   margin: 0 auto;
@@ -80,6 +168,7 @@ button:hover {
 
 .contact-htmlForm label {
   font-weight: 600;
+  align-items: center;
 }
 
 .contact-htmlForm input,
@@ -92,15 +181,27 @@ button:hover {
 }
 
 .section-contact {
-  margin: 50px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  @media (min-width: 1200px) {
+    margin: 50px;
+  }
 }
 
 .form-contact-wrapper {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 1fr;
-  grid-column-gap: 12px;
-  grid-row-gap: 12px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  @media (min-width: 1200px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 12px;
+    grid-row-gap: 12px;
+  }
 }
 
 .contact-info {
@@ -112,25 +213,37 @@ button:hover {
 }
 
 .leaflet-container {
-  height: 50vh;
-  width: 300wh;
+  height: 30vh;
+  width: 100wh;
+
+  @media (min-width: 1200px) {
+    height: 50vh;
+    width: 300wh;
+  }
 }
 
 /*Style des cartes dans restaurants */
 .card_container {
   margin: 0px auto 24px;
-  padding: 0 32px;
+  padding: 0px 32px;
   max-width: 1000px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  grid-column-gap: 12px;
-  grid-row-gap: 12px;
+
+  @media (min-width: 1200px) {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 12px;
+    grid-row-gap: 12px;
+  }
 }
 .card {
-  border: 3px solid #6e7f52;
+  border: 5px solid #5a3e2b;
   border-radius: 9px;
   text-align: center;
+  margin-top: 5%;
+
+  @media (min-width: 1200px) {
+  }
 }
 
 .card button {
@@ -140,8 +253,14 @@ button:hover {
 /*Style des horaires dans reservations*/
 .calendrier {
   display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+  flex-direction: column;
+  overflow: hidden;
+
+  @media (min-width: 1200px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
 }
 
 .booking-calendar-hours {
@@ -152,24 +271,4 @@ button:hover {
 .booking-calendar-list-wrapper {
   display: flex;
   flex-wrap: wrap;
-}
-
-
-
-
-
-
-
-
-/*  responsive design */
-
-@media (min-width: 900px) {
-
-
-    
-}
-
-@media (min-width: 600px) {
-
-  
 }

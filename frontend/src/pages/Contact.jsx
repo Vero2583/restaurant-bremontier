@@ -8,7 +8,7 @@ const Contact = () => {
       <div className="form-contact-wrapper">
         <FormContact />
         <div className="contact-info">
-          <div class="information">
+          <div className="information">
             <p>📍 110 rue des hauts fourneaux, 40210 Labouheyere</p>
             <div className="Mappy">
               <Map />

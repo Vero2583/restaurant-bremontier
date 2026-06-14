@@ -5,7 +5,7 @@ import { jwtDecode } from 'jwt-decode';
 import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
-    const { setUser } = useAuth();
+ const { setUser } = useAuth();
  const navigate = useNavigate()
  
     const fields = [
@@ -22,6 +22,6 @@ const Login = () => {
         } catch (err) { alert("Identifiants incorrects", err); }
     };
 
-    return (<div><h2>Connexion</h2><Form inputs={fields} onSubmit={onSubmit} submitLabel="Login" /></div>);
+    return (<div className="form-login"><h2>Connexion</h2><Form inputs={fields} onSubmit={onSubmit} submitLabel="Login" /></div>);
 };
 export default Login;

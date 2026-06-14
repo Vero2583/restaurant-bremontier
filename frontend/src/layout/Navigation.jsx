@@ -1,12 +1,25 @@
 import { NavLink } from "react-router-dom";
+import { useAuth } from "../hook/UseAuth.js";
+import LogoutBtn from "../components/LogoutBtn"
+
+
+
 
 const Navigation = () => {
+  const { user } = useAuth();
+  // console.log(user);
+
   return (
     <>
       <nav style={{ padding: "1rem", borderBottom: "1ps solid" }}>
-        <NavLink style={{ padding: "1rem", color: "#faf3e0" }} to="/login">
-          Connexion
-        </NavLink>
+        {user?.email ? (
+          <LogoutBtn />
+        ) : (
+          <NavLink style={{ padding: "1rem", color: "#faf3e0" }} to="/login">
+            Connexion
+          </NavLink>
+        )}
+
         <NavLink style={{ padding: "1rem", color: "#faf3e0" }} to="/">
           Accueil
         </NavLink>

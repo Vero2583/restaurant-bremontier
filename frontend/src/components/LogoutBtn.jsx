@@ -3,10 +3,17 @@ import { useAuth } from "../hook/UseAuth";
 
 const LogoutBtn = () => {
   const { logout } = useAuth();
+  
+  const redirect = () => {
+    logout() 
+    window.location.replace("/")
+  }
+
   return (
-    <button   onClick={logout}>
+    <button   onClick={redirect}>
       Logout
     </button>
+
   );
 };
 

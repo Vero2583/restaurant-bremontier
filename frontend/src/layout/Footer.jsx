@@ -12,7 +12,7 @@ const Footer = () => {
         </div>
         <div className="footer-info">
           <h2>Nos coordonnées</h2>
-          <ul className="contact">
+          <ul className="footer-contact">
             <li>📍 110 rue des hauts fourneaux, 40210 Labouheyere</li>
             <li>✉️ audelarrieu040@gmail.com</li>
             <li>📞 05.58.07.01.13</li>

@@ -11,7 +11,8 @@ const Dahsboard = () => {
   // le formulaire à afficher, lui enlever le style display none
 
   return (
-    <>
+    <section className="dashboard" >
+
       <div>Dashboard</div>
 
       <div>
@@ -138,7 +139,7 @@ const Dahsboard = () => {
           submitLabel={"Créer une boisson"}
         />
       </div>
-    </>
+    </section>
   )
 }
 

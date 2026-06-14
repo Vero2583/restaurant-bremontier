@@ -53,7 +53,7 @@ const Register = () => {
   return (
     <div>
       <h2>Inscription</h2>
-      <Form inputs={fields} onSubmit={onSubmit} submitLabel={"S'inscrire"} />
+      <Form className="form-register" inputs={fields} onSubmit={onSubmit} submitLabel={"S'inscrire"} />
     </div>
   );
 };
