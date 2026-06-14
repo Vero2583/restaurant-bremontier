@@ -4,7 +4,7 @@ import cors from 'cors';
 import helmet from 'helmet';
 
 import authRoutes from './routes/auth.route.js';
-import { authMiddleware, authorize } from './middlewares/auth.middleware.js';
+import { authMiddleware } from './middlewares/auth.middleware.js';
 
 import allergenesRoutes from './routes/allergenes.route.js'
 import menusRoutes from './routes/menus.route.js'
@@ -29,7 +29,7 @@ app.use(cors({
 app.use('/uploads', express.static('uploads'));
 
 app.use('/api', authRoutes);
-app.get('/',authMiddleware, authorize(['ADMIN', 'USER']), (req, res) => res.send('API Auth Backend fonctionne'));
+app.get('/',authMiddleware, (req, res) => res.send('API Auth Backend fonctionne'));
 
 app.use('/api/allergenes', allergenesRoutes);
 app.use('/api/menus', menusRoutes);//

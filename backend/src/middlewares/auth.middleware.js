@@ -15,7 +15,9 @@ export const authMiddleware = (req, res, next) => {
     try {
 
         req.user = jwt.verify(token, process.env.JWT_SECRET)
-        next()
+        if(!req.user) throw new Error("L'utilisateur n'est pas identifier")
+         next()    
+        
         
     } catch (error) {
        return res.status(403).json({messge: "Token invalide"}) 

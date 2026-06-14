@@ -34,6 +34,10 @@ const FormContact = () => {
               required
             >
             </textarea>
+
+            <input type="checkbox" id="consent" required name="consent"/>
+            <label htmlFor="consent">Autoriser le traitement des données</label>
+
             <button type="submit">Envoyer</button>
           </form>
         </div>

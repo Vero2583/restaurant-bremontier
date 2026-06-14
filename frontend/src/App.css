@@ -163,12 +163,13 @@ button:hover {
 
 /*  responsive design */
 
-@media (max-width: 900px) {
+@media (min-width: 900px) {
+
 
     
 }
 
-@media (max-width: 600px) {
+@media (min-width: 600px) {
 
   
 }
