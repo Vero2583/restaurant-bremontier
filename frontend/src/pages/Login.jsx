@@ -24,4 +24,5 @@ const Login = () => {
 
     return (<div className="form-login"><h2>Connexion</h2><Form inputs={fields} onSubmit={onSubmit} submitLabel="Login" /></div>);
 };
+
 export default Login;

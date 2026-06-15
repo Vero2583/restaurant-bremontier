@@ -13,7 +13,7 @@ const Dahsboard = () => {
   return (
     <section className="dashboard" >
 
-      <div>Dashboard</div>
+      <h2>Dashboard</h2>
 
       <div>
         <label for="mealTypeEntreeRadio">Entrée</label>

@@ -10,13 +10,13 @@ const Register = () => {
       name: "prenom",
       label: "Prenom",
       type: "prenom",
-      validation: {required: "requis"},
+      validation: { required: "requis" },
     },
     {
       name: "role",
       label: "Role",
       type: "role",
-      validation: {required: "requis"},
+      validation: { required: "requis" },
     },
     {
       name: "email",
@@ -30,7 +30,6 @@ const Register = () => {
       type: "password",
       validation: { required: "requis" },
     },
-    
   ];
 
   const onSubmit = async (data) => {
@@ -39,7 +38,7 @@ const Register = () => {
     formData.append("role", data.role);
     formData.append("email", data.email);
     formData.append("password", data.password);
-    
+
     try {
       await api.post("/register", formData);
       //navigate("/login");
@@ -51,9 +50,9 @@ const Register = () => {
   };
 
   return (
-    <div>
+    <div className="form-register">
       <h2>Inscription</h2>
-      <Form className="form-register" inputs={fields} onSubmit={onSubmit} submitLabel={"S'inscrire"} />
+      <Form inputs={fields} onSubmit={onSubmit} submitLabel={"Inscription"} />
     </div>
   );
 };

@@ -28,7 +28,6 @@ button {
   width: 50%;
   margin-bottom: 5%;
 
-
   @media (min-width: 1200px) {
     padding: 12px;
     border: none;
@@ -61,10 +60,20 @@ button:hover {
   border: solid #5a3e2b 5px;
   border-radius: 9px;
   margin: 200px 100px 50px;
+}
 
+.form-register {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 10px;
+  border: solid #5a3e2b 5px;
+  border-radius: 9px;
+  margin: 200px 100px 50px 100px;
 }
 
 /*Style du header*/
+
 .header {
   background-color: #5a3e2b;
   color: #faf3e0;
@@ -74,7 +83,6 @@ button:hover {
   overflow: hidden;
   padding: 0px;
   align-items: center;
-  font-size: 0.5rem;
   overflow: hidden;
 
   @media (min-width: 1200px) {
@@ -89,6 +97,7 @@ button:hover {
 }
 
 /*Style du footer*/
+
 .footer {
   /* 320px */
   background-color: #5a3e2b;
@@ -109,7 +118,7 @@ button:hover {
 }
 .footer-info {
   flex-direction: row;
-  text-align: left;
+  
 
   @media (min-width: 1200px) {
     display: flex;
@@ -120,9 +129,7 @@ button:hover {
   }
 }
 
-.footer-info h2 {
-  text-align: center;
-}
+
 
 .nav-footer {
   display: flex;
@@ -152,12 +159,13 @@ button:hover {
 
 /*paragraphe acceuil*/
 
-.histoire{
+.histoire {
   text-align: justify;
   font-size: 400;
 }
 
 /*Style de la page contact*/
+
 .contact-htmlForm {
   max-width: 600px;
   margin: 0 auto;
@@ -212,6 +220,8 @@ button:hover {
   grid-area: 1 / 2 / 2 / 3;
 }
 
+/* Carte de localisation */
+
 .leaflet-container {
   height: 30vh;
   width: 100wh;
@@ -223,6 +233,7 @@ button:hover {
 }
 
 /*Style des cartes dans restaurants */
+
 .card_container {
   margin: 0px auto 24px;
   padding: 0px 32px;
@@ -251,6 +262,7 @@ button:hover {
 }
 
 /*Style des horaires dans reservations*/
+
 .calendrier {
   display: flex;
   flex-direction: column;

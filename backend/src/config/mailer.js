@@ -26,7 +26,7 @@ export const sendVerificationEmail = async (email, token) => {
     subject: "Confirme ton email",
     html: `<h2>Bienvenue ${email} !</h2>
            <p>Merci de t'être inscrit. Clique sur le lien ci-dessous pour vérifier ton compte :</p>
-           <a href="http://localhost:5000/api/verify?token=${token}">Vérifier mon email</a>`,
+           <a href="https://restaurant-bremontier.onrender.com/api/verify?token=${token}">Vérifier mon email</a>`,
   });
 };
 
@@ -36,7 +36,7 @@ export const sendResetPasswordEmail = async (email, token) => {
     to: email,
     subject: "Réinitialisation mot de passe",
     html: `<p>Clique sur le lien pour réinitialiser ton mot de passe :</p>
-           <a href="http://localhost:5000/api/reset-password?token=${token}">Réinitialiser</a>`,
+           <a href="https://restaurant-bremontier.onrender.com/api/reset-password?token=${token}">Réinitialiser</a>`,
   });
 };
 
