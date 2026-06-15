@@ -22,7 +22,7 @@ app.use(helmet());
 
 // Se connecter avec le frontend
 app.use(cors({
-    origin: 'http://localhost:5173'
+    origin: 'https://restaurant-bremontier-1.onrender.com'
 }));
 
 // pour avoir accès au dossier upload
