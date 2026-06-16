@@ -1,21 +1,20 @@
-import nodemailer from 'nodemailer'
+import nodemailer from "nodemailer";
 import dotenv from "dotenv";
 dotenv.config();
-
 
 const transporter = nodemailer.createTransport({
   host: process.env.BREVO_SMTP_HOST,
   port: Number(process.env.BREVO_SMTP_PORT),
   secure: false,
   auth: {
-      user: process.env.BREVO_SMTP_USER,
-      pass: process.env.BREVO_SMTP_PASS
-  }    
+    user: process.env.BREVO_SMTP_USER,
+    pass: process.env.BREVO_SMTP_PASS,
+  },
 });
 
 transporter.verify((err, success) => {
-  if (err) console.error(' SMTP erreur :', err.message);
-  else console.log(' SMTP connecté !');
+  if (err) console.error(" SMTP erreur :", err.message);
+  else console.log(" SMTP connecté !");
 });
 
 export const sendVerificationEmail = async (email, token) => {
@@ -40,3 +39,17 @@ export const sendResetPasswordEmail = async (email, token) => {
   });
 };
 
+// https://youtu.be/WTmqUtye3hU
+
+export const sendContact = async (to, nom, email, message) => {
+  await transporter.sendMail({
+    from: "Restaurant-bremontier <bremontier40@gmail.com>",
+    to: to,
+    subject: "Recapitulatif de demande de contact",
+    html: `voici: votre demande de contact
+    nom: ${nom}
+    email: ${email}
+    message: ${message}
+    `,
+  });
+};
