@@ -22,7 +22,7 @@ app.use(helmet());
 
 // Se connecter avec le frontend
 app.use(cors({
-    origin: 'https://restaurant-bremontier-1.onrender.com'
+    origin: 'https://frontend-beige-one-90.vercel.app/'
 }));
 
 // pour avoir accès au dossier upload
