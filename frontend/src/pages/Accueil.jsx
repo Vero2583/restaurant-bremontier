@@ -15,7 +15,7 @@ const Accueil = () => {
   <section id="section" className="nous">
 
         <h2>Restaurant Brémontier</h2>
-        <p className="histoire">
+        <p className="">
           Notre restaurant familial situé à Labouheyre près de Mimizan, Biscarosse, Saugnac et Muret, Castets… 
           vous propose une cuisine landaise traditionnelle. 
           Au service de nos clients depuis plus de 50 ans, nous vous suggérons des plats authentiques et une carte des vins à savourer le midi ou le soir.
