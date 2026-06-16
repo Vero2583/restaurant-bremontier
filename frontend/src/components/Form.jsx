@@ -1,13 +1,13 @@
 import { useForm } from "react-hook-form";
 
-// On défini les composants du formulaire dans les props 
-// Input : les champs , le onSubmit: c'est la fonction appelé lors de la sourmission)  
+// On défini les composants du formulaire dans les props
+// Input : les champs , le onSubmit: c'est la fonction appelé lors de la sourmission)
 // et submitLabel est le titre du bouton de soumission
 
-const Form = ({inputs, onSubmit, submitLabel}) => {
-    // register: est une fonction qui permet d'enregister les champ du formulaire 
-    // handleSubmit est la fonction qui gere la valdition avant l'envoie 
-    // errors est un objet qui contient les erreurs de validation pour chaque champ 
+const Form = ({ inputs, onSubmit, submitLabel }) => {
+  // register: est une fonction qui permet d'enregister les champ du formulaire
+  // handleSubmit est la fonction qui gere la valdition avant l'envoie
+  // errors est un objet qui contient les erreurs de validation pour chaque champ
   const {
     register,
     handleSubmit,
@@ -18,11 +18,23 @@ const Form = ({inputs, onSubmit, submitLabel}) => {
     <form onSubmit={handleSubmit(onSubmit)}>
       {inputs.map((input) => (
         <div key={input.name} style={{ marginBottom: "10px" }}>
-          <label>{input.label}</label>
-          <input
-            type={input.type}
-            {...register(input.name, input.validation)}
-          />
+          <label htmlFor={input.id}>{input.label}</label>
+
+          {input.type === "textarea" ? (
+            <textarea
+              id={input.id}
+              type={input.type}
+              {...register(input.name, input.validation)}
+              rows={input.rows}
+            />
+          ) : (
+            <input
+              id={input.id}
+              type={input.type}
+              {...register(input.name, input.validation)}
+            />
+          )}
+
           {errors[input.name] && (
             <p style={{ color: "red", fontWeight: "bold" }}>
               {errors[input.name].message}
@@ -35,5 +47,4 @@ const Form = ({inputs, onSubmit, submitLabel}) => {
   );
 };
 
-
-export default Form
+export default Form;

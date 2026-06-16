@@ -1,51 +1,58 @@
-import React from 'react'
+import React from "react";
+import api from "../api/axios";
+import Form from "./Form";
 
 const FormContact = () => {
+  const fields = [
+    {
+      id: "form-contact-nom",
+      name: "nom",
+      label: "Nom",
+      type: "text",
+      validation: { required: "Requis" },
+    },
+    {
+      id: "form-contact-email",
+      name: "email",
+      label: "Email",
+      type: "email",
+      validation: { required: "Requis" },
+    },
+    {
+      id: "form-contact-message",
+      name: "message",
+      label: "Message",
+      type: "textarea",
+      validation: { required: "Requis" },
+      rows: 6,
+    },
+    {
+      id: "form-contact-consent",
+      name: "consent",
+      label: "Autoriser le traitement des données",
+      type: "checkbox",
+      validation: { required: "Requis" },
+    },
+  ];
+
+  const onSubmit = async (data) => {
+    try {
+      const res = await api.post("/contact", data);
+      const resJSON = await res.json();
+
+      console.log(resJSON);
+    } catch (err) {
+      alert("Identifiants incorrects", err);
+    }
+  };
 
   return (
-  <>
-    <div className="contact-form">
-          
-          <form className="contact-htmlForm">
-            <label htmlFor="name">Nom</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              placeholder="Votre nom"
-              required
-            />
-
-            <label htmlFor="email">Email</label>
-            <input
-              type="text"
-              id="email"
-              name="email"
-              placeholder="Votre Email"
-              required
-            />
-
-            <label htmlFor="message">Messages</label>
-            <textarea
-              name="message"
-              id="message"
-              placeholder="Votre mesage "
-              rows="12"
-              required
-            >
-            </textarea>
-
-            <input type="checkbox" id="consent" required name="consent"/>
-            <label htmlFor="consent">Autoriser le traitement des données</label>
-
-            <button type="submit">Envoyer</button>
-          </form>
-        </div>
-
-
-
+    <>
+      <div className="contact-form">
+        <Form inputs={fields} onSubmit={onSubmit} submitLabel="Envoyer" />
+      </div>
     </>
   );
 };
 
-export default FormContact
+export default FormContact;

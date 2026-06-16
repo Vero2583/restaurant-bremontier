@@ -7,24 +7,28 @@ const Register = () => {
 
   const fields = [
     {
+      id:"form-register-prenom",
       name: "prenom",
       label: "Prenom",
       type: "prenom",
       validation: { required: "requis" },
     },
     {
+      id:"form-register-role",
       name: "role",
       label: "Role",
       type: "role",
       validation: { required: "requis" },
     },
     {
+      id:"form-register-email",
       name: "email",
       label: "Email",
       type: "email",
       validation: { required: "requis" },
     },
     {
+      id:"form-register-password",
       name: "password",
       label: "Password",
       type: "password",

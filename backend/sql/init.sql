@@ -81,9 +81,10 @@ CREATE TABLE menus(
 );
 
 CREATE TABLE contact(
-  nom VARCHAR(255),
-  email VARCHAR(255) DEFAULT NULL UNIQUE,
-  message TEXT
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  nom VARCHAR(255) NOT NULL,
+  email VARCHAR(255) NOT NULL,
+  message TEXT NOT NULL
 );
 
 --Créations des tables de laisons:

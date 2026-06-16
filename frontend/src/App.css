@@ -118,7 +118,6 @@ button:hover {
 }
 .footer-info {
   flex-direction: row;
-  
 
   @media (min-width: 1200px) {
     display: flex;
@@ -129,8 +128,6 @@ button:hover {
     gap: 64px;
   }
 }
-
-
 
 .nav-footer {
   display: flex;
@@ -166,30 +163,6 @@ button:hover {
   padding: 10px;
 }
 
-/*Style de la page contact*/
-
-.contact-htmlForm {
-  max-width: 600px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.contact-htmlForm label {
-  font-weight: 600;
-  align-items: center;
-}
-
-.contact-htmlForm input,
-.contact-htmlForm textarea {
-  padding: 12px;
-  border-radius: 9px;
-  border: 1px solid #2b2b2b;
-  color: #faf3e0;
-  width: 100%;
-}
-
 .section-contact {
   display: flex;
   flex-direction: column;
@@ -220,6 +193,28 @@ button:hover {
 
 .contact-form {
   grid-area: 1 / 2 / 2 / 3;
+
+  form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    label {
+      font-weight: 600;
+      align-items: center;
+    }
+
+    input,
+    textarea {
+      padding: 12px;
+      border-radius: 9px;
+      border: 1px solid #2b2b2b;
+      color: #2b2b2b;
+      width: 100%;
+    }
+  }
 }
 
 /* Carte de localisation */

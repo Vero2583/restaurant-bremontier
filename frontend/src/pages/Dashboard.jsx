@@ -34,18 +34,21 @@ const Dahsboard = () => {
         <Form
           inputs={[
             {
+              id:"form-contact-nom",
               name: "nom",
               label: "Nom",
               type: "text",
               validation: true,
             },
              {
+              id:"form-contact-prix",
               name: "prix",
               label: "Prix",
               type: "text",
               validation: true,
             },
              {
+              id:"form-contact-appartient_carte",
               name: "appartient_carte",
               label: "Appartient_carte",
               type: "text",
@@ -62,18 +65,21 @@ const Dahsboard = () => {
         <Form
           inputs={[
             {
+              id:"form-contact-nom",
               name: "nom",
               label: "Nom",
               type: "text",
               validation: true,
             },
             {
+              id:"form-contact-prix",
               name: "prix",
               label: "Prix",
               type: "text",
               validation: true,
             },
              {
+              id:"form-contact-appartient_carte",
               name: "appartient_carte",
               label: "Appartient_carte",
               type: "text",
@@ -90,18 +96,21 @@ const Dahsboard = () => {
         <Form
           inputs={[
             {
+              id:"form-contact-nom",
               name: "name",
               label: "Nom",
               type: "text",
               validation: true,
             },
             {
+              id:"form-contact-prix",
               name: "prix",
               label: "Prix",
               type: "text",
               validation: true,
             },
              {
+              id:"form-contact-appartient_carte",
               name: "appartient_carte",
               label: "Appartient_carte",
               type: "text",
@@ -117,18 +126,21 @@ const Dahsboard = () => {
         <Form
           inputs={[
             {
+              id:"form-contact-nom",
               name: "name",
               label: "Nom",
               type: "text",
               validation: true,
             },
             {
+              id:"form-contact-prix",
               name: "prix",
               label: "Prix",
               type: "text",
               validation: true,
             },
              {
+              id:"form-contact-contient_alcool",
               name: "contient_alccol",
               label: "Contient_alcool",
               type: "text",

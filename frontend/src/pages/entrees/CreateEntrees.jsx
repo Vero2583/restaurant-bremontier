@@ -26,24 +26,28 @@ const CreateEntree = () => {
   // Champs gérés par Form 
   const fields = [
     {
+      id:"form-entree-image_id",
       name: "image_id",
       label: "Image_id",
       type: "text",
       validation: { required: "Image requise" },
     },
     {
+      id:"form-entree-nom",
       name: "nom",
       label: "nom",
       type: "text",
       validation: { required: "Nom requis" },
     },
     {
+      id:"form-entree-prix",
       name: "prix",
       label: "Prix",
       type: "text",
       validation: { required: "Prix requis" },
     },
     {
+      id:"form-entree-appartient_carte",
       name: "appartient_carte",
       label: "appartient_carte",
       type: "",
