@@ -11,7 +11,7 @@ const Navigation = () => {
 
   return (
     <>
-      <nav style={{ padding: "1rem", borderBottom: "1ps solid" }}>
+      <nav className="navbar" style={{ padding: "1rem", borderBottom: "1ps solid" }}>
         {user?.email ? (
           <LogoutBtn />
         ) : (

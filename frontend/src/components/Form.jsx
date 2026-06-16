@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 // Input : les champs , le onSubmit: c'est la fonction appelé lors de la sourmission)
 // et submitLabel est le titre du bouton de soumission
 
-const Form = ({ inputs, onSubmit, submitLabel }) => {
+const Form = ({ myRef, inputs, onSubmit, submitLabel }) => {
   // register: est une fonction qui permet d'enregister les champ du formulaire
   // handleSubmit est la fonction qui gere la valdition avant l'envoie
   // errors est un objet qui contient les erreurs de validation pour chaque champ
@@ -15,7 +15,7 @@ const Form = ({ inputs, onSubmit, submitLabel }) => {
   } = useForm();
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form ref={myRef} onSubmit={handleSubmit(onSubmit)}>
       {inputs.map((input) => (
         <div key={input.name} style={{ marginBottom: "10px" }}>
           <label htmlFor={input.id}>{input.label}</label>
@@ -42,7 +42,7 @@ const Form = ({ inputs, onSubmit, submitLabel }) => {
           )}
         </div>
       ))}
-      <button type="submit"> {submitLabel}</button>
+      <button className="btform" type="submit"> {submitLabel}</button>
     </form>
   );
 };

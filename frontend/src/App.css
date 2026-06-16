@@ -27,14 +27,11 @@ button {
   border-radius: 9px;
   width: 50%;
   margin-bottom: 5%;
-
-  @media (min-width: 1200px) {
-    padding: 12px;
-    border: none;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.3s;
-  }
+  padding: 12px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
 }
 
 button:hover {
@@ -92,6 +89,12 @@ button:hover {
   }
 }
 
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .img-logo {
   padding: 10px;
 }
@@ -108,6 +111,7 @@ button:hover {
   align-items: center;
   max-width: 100vw;
   overflow: hidden;
+  margin-top: 10px;
 
   /* plus grand */
   @media (min-width: 1200px) {
@@ -215,6 +219,10 @@ button:hover {
       width: 100%;
     }
   }
+}
+
+.btform {
+  margin: auto;
 }
 
 /* Carte de localisation */

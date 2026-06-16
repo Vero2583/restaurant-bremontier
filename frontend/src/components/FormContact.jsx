@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useRef } from "react";
 import api from "../api/axios";
 import Form from "./Form";
+import { toast } from "react-toastify";
 
 const FormContact = () => {
+  const formRef = useRef();
+
   const fields = [
     {
       id: "form-contact-nom",
@@ -38,9 +41,13 @@ const FormContact = () => {
   const onSubmit = async (data) => {
     try {
       const res = await api.post("/contact", data);
-      const resJSON = await res.json();
+      // console.log(res);
 
-      console.log(resJSON);
+      // réinitialiser le formulaire
+      if (formRef && formRef.current) formRef.current.reset();
+
+      // envoyer un toast
+      toast.success("Votre demande de contact est bien enregistrée !");
     } catch (err) {
       alert("Identifiants incorrects", err);
     }
@@ -49,7 +56,12 @@ const FormContact = () => {
   return (
     <>
       <div className="contact-form">
-        <Form inputs={fields} onSubmit={onSubmit} submitLabel="Envoyer" />
+        <Form
+          myRef={formRef}
+          inputs={fields}
+          onSubmit={onSubmit}
+          submitLabel="Envoyer"
+        />
       </div>
     </>
   );

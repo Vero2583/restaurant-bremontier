@@ -5,6 +5,7 @@ import Dahsboard from "./pages/Dashboard";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import PrivateRoute from "./routes/PrivateRoute";
+import { ToastContainer } from 'react-toastify';
 import Header from "./layout/Header.jsx";
 import Footer from "./layout/Footer.jsx";
 import { useAuth } from "./hook/UseAuth.js";
@@ -58,7 +59,9 @@ function App() {
         </Routes>
       </main>
 
-        <Footer/>  
+        <Footer/>
+
+        <ToastContainer/>
          <script
       src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
       integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
