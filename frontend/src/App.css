@@ -159,9 +159,10 @@ button:hover {
 
 /*paragraphe acceuil*/
 
-.histoire {
+.para-hero {
   text-align: justify;
-  font-size: 400;
+  font-size: 14px;
+  padding: 10px;
 }
 
 /*Style de la page contact*/
